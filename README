@@ -1,0 +1,12 @@
+The BioKIDS iOS app is a universal app that allows elementary and
+middle school students to collect data about plants and animals
+found in their schoolyard or another location.  The collected data
+(observations) may be saved to the BioKIDS server.
+
+Recorded observations are stored in Core Data and uploaded to the server
+in CSV format using NSURLConnection (HTTP POST).
+
+The data collection sequence (series of screens) is controlled by the
+contents of the BioKIDS/en.lproj/sequence.plist file.
+
+Most recently, the app was built using Xcode 4.0.2 and iOS SDK 4.3.
