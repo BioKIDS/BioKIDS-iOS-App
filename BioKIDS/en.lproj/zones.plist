@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>Zone A</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Zone B</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Zone C</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Zone D</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Zone E</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Zone F</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Zone G</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Zone H</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Zone I</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Zone J</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Zone K</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Zone L</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Zone M</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Zone N</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Zone O</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Zone P</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Zone Q</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Zone R</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Zone S</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Zone T</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Other Zone</string>
+		</dict>
+	</array>
+	<key>iconHeight</key>
+	<integer>0</integer>
+</dict>
+</plist>

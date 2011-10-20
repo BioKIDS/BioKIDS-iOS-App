@@ -1,0 +1,89 @@
+/* 
+  Localizable.strings
+  Created 8/8/11.
+
+  Copyright (c) 2011 The Regents of the University of Michigan
+
+  Permission is hereby granted, free of charge, to any person obtaining
+  a copy of this software and associated documentation files (the
+  "Software"), to deal in the Software without restriction, including
+  without limitation the rights to use, copy, modify, merge, publish,
+  distribute, sublicense, and/or sell copies of the Software, and to
+  permit persons to whom the Software is furnished to do so, subject
+  to the following conditions:
+
+  The above copyright notice and this permission notice shall be
+  included in all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR
+  ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+  CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+"DefaultServerURL" = "https://animaldiversity.ummz.umich.edu/biokids/cybertracker/upload";
+
+"MainAppTitle" = "BioKIDS";
+"BackTitle" = "Back";
+"NextTitle" = "Next";
+
+"CancelTitle" = "Cancel";
+"DeleteObsTitle" = "Delete This Observation";
+"UnableToDeleteObservation" = "Unable to delete observation.";
+"DeleteAllObsTitle" = "Delete All Observations";
+"DeleteAllObsPromptOne" = "There is one unsaved observation.  Deletion cannot be undone.";
+"DeleteAllObsPromptFmt" = "There are %d unsaved observations.  Deletion cannot be undone.";
+
+"CoreDataInitErrorFormat" = "\nUnable to initialize storage system.  Please report this error: %@";
+"PressHomeToExit" = "\n\nPress the Home button to exit.";
+
+"AboutTitle" = "About BioKIDS";
+
+"ObservationsTitle" = "Observations";
+"GrassCoverage0" = "Almost none";
+"GrassCoverage1" = "Less than half";
+"GrassCoverage2" = "About half";
+"GrassCoverage3" = "More than half";
+"GrassCoverage4" = "Almost all";
+
+"ObservationDetailsTitle" = "Observation";
+"HTMLLabelBioKIDSID" = "BioKIDS ID#";
+"HTMLLabelTracker" = "Tracker Name:";
+"HTMLLabelSense" = "Sense:";
+"HTMLLabelWhatSensed" = "What Sensed:";
+"HTMLLabelHowMuch" = "How Much:";
+"HTMLLabelHowMany" = "How Many:";
+"HTMLValueExactFmt" = "Exactly %d";
+"HTMLValueApproxFmt" = "About %d";
+"HTMLLabelEnergyRole" = "Energy Role:";
+"HTMLLabelMicrohabitat" = "Microhabitat:";
+"HTMLLabelBehavior" = "Behavior:";
+"HTMLLabelEating" = "Eating:";
+"HTMLLabelNotes" = "Notes:";
+
+"ServerTitle" = "Save To Server";
+"NoObservationsToUpload" = "There are no observations that need to be saved to the server.";
+"OneObservationToUpload" = "There is one observation that needs to be saved to the server.";
+"ObservationsToUploadFmt" = "There are %d observations that need to be saved to the server.";
+"Uploading" = "Sending your observations to the server... please wait.";
+"UploadOK" = "Your observations have been saved.";
+"UploadErrorFmt" = "Your last save attempt failed (%@).";
+"ConnectionError" = "unable to create connection";
+"HTTPErrorFmt" = "HTTP status %d";
+"ServerAuthError" = "incorrect user name or password";
+
+"ServerSettingsTitle" = "Server Settings";
+
+"SettingsRequired" = "Before you can proceed, you must enter your settings.";
+"OKButtonLabel" = "OK";
+
+"SettingsTitle" = "Settings";
+"SettingsHeader" = "Your teacher will tell you your BioKIDS ID #. Be sure to enter your team's tracker name, and the zone where you will be working. Do this before you start collecting data!";
+"SettingsTrackerLabel" = "Tracker Name";
+"SettingsChooseTrackerTitle" = "Select a Tracker Name";
+"SettingsZoneLabel" = "Zone";
+"SettingsChooseZoneTitle" = "Select Your Zone";
+

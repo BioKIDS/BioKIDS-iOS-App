@@ -1,0 +1,1696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>screens</key>
+	<dict>
+		<key>_start</key>
+		<dict>
+			<key>dataField</key>
+			<string>HowSensed</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>icon</key>
+					<string>seq-see.png</string>
+					<key>label</key>
+					<string>See</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-hear.png</string>
+					<key>label</key>
+					<string>Hear</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-smell.png</string>
+					<key>label</key>
+					<string>Smell</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-feel.png</string>
+					<key>label</key>
+					<string>Feel</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>what-sensed</string>
+			<key>title</key>
+			<string>How do you sense it?</string>
+			<key>type</key>
+			<string>Choose0</string>
+		</dict>
+		<key>amphibian-type</key>
+		<dict>
+			<key>dataField</key>
+			<string>Species</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>American toad</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Bullfrog</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Gray treefrog</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Green frog</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Northern leopard frog</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Northern spring peeper</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Red-backed salamander</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Striped chorus frog</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Wood frog</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Other frog</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Unknown frog</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>animal-howmany</string>
+			<key>title</key>
+			<string>What type of amphibian is it?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>animal-group</key>
+		<dict>
+			<key>dataField</key>
+			<string>Group</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>icon</key>
+					<string>seq-bird.png</string>
+					<key>label</key>
+					<string>Bird</string>
+					<key>next</key>
+					<string>bird-type</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-mammal.png</string>
+					<key>label</key>
+					<string>Mammal</string>
+					<key>next</key>
+					<string>mammal-type</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-amphibian.png</string>
+					<key>label</key>
+					<string>Amphibian</string>
+					<key>next</key>
+					<string>amphibian-type</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-reptile.png</string>
+					<key>label</key>
+					<string>Reptile</string>
+					<key>next</key>
+					<string>reptile-type</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-fish.png</string>
+					<key>label</key>
+					<string>Fish</string>
+					<key>next</key>
+					<string>fish-type</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-0legs-worm.png</string>
+					<key>label</key>
+					<string>0 Legs (Annelid)</string>
+					<key>next</key>
+					<string>annelid-type</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-0legs-mollusk.png</string>
+					<key>label</key>
+					<string>0 Legs (Mollusk)</string>
+					<key>next</key>
+					<string>mollusk-type</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-insect.png</string>
+					<key>label</key>
+					<string>6 Legs (Insect)</string>
+					<key>next</key>
+					<string>insect-type</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-arachnid.png</string>
+					<key>label</key>
+					<string>8 Legs (Arachnid)</string>
+					<key>next</key>
+					<string>arachnid-type</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-multilegs-crustacean.png</string>
+					<key>label</key>
+					<string>10-14 Legs (Crustacean)</string>
+					<key>next</key>
+					<string>crustacean-type</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-multilegs-myriapod.png</string>
+					<key>label</key>
+					<string>20+ Legs (Myriapod)</string>
+					<key>next</key>
+					<string>myriapod-type</string>
+				</dict>
+			</array>
+			<key>title</key>
+			<string>What animal group is it in?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>animal-howmany</key>
+		<dict>
+			<key>dataField</key>
+			<string>HowMany</string>
+			<key>next</key>
+			<string>what-energy-role-animal</string>
+			<key>title</key>
+			<string>How many animals?</string>
+			<key>type</key>
+			<string>Count</string>
+		</dict>
+		<key>annelid-type</key>
+		<dict>
+			<key>dataField</key>
+			<string>Species</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>Earthworms</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Leeches</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Nematode worms</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Other annelid</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Unknown annelid</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>animal-howmany</string>
+			<key>title</key>
+			<string>What type of annelid is it?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>arachnid-type</key>
+		<dict>
+			<key>dataField</key>
+			<string>Species</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>Spiders…</string>
+					<key>next</key>
+					<string>arachnid-type-spider</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Harvestmen</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Ticks</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Mites</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Pseudoscorpions</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Other arachnid</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Unknown arachnid</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>animal-howmany</string>
+			<key>title</key>
+			<string>What type of arachnid is it?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>arachnid-type-spider</key>
+		<dict>
+			<key>dataField</key>
+			<string>Species</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>Orb-weavers</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Jumping spiders</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Funnel-web spiders</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Wolf spiders</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Sheet-web spiders</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Daddy long-legs spiders</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Cobweb spiders</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Sac spiders</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Triangle spiders</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Crab spiders</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Other spider</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Unknown spider</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>animal-howmany</string>
+			<key>title</key>
+			<string>What type of spider is it?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>bird-type</key>
+		<dict>
+			<key>dataField</key>
+			<string>Species</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>European starling</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>House sparrow</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>American robin</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>American crow</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Rock dove (pigeon)</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Northern cardinal</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Morning dove</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Ring-billed gull</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>House finch</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Canada goose</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Mallard</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Blue jay</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Black-capped chickadee</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Downy woodpecker</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Killdeer</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Great blue heron</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Turkey vulture</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Domestic chicken</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Peregrine falcon</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Other birds not listed</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Unknown bird</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>animal-howmany</string>
+			<key>title</key>
+			<string>What type of bird is it?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>consumer-type-animal</key>
+		<dict>
+			<key>dataField</key>
+			<string>EnergyRole</string>
+			<key>helpText</key>
+			<string>What is the primary food source?</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>Carnivore</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Herbivore</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Omnivore</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Decomposer</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>where-is-it</string>
+			<key>title</key>
+			<string>What type of consumer is it?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>consumer-type-plant</key>
+		<dict>
+			<key>dataField</key>
+			<string>EnergyRole</string>
+			<key>helpText</key>
+			<string>What is the primary food source?</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>Carnivore</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Herbivore</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Omnivore</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Decomposer</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>notes</string>
+			<key>title</key>
+			<string>What type of consumer is it?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>crustacean-type</key>
+		<dict>
+			<key>dataField</key>
+			<string>Species</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>Pillbugs (rolypolies)</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Crayfish</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Other crustacean</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Unknown crustacean</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>animal-howmany</string>
+			<key>title</key>
+			<string>What type of crustacean is it?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>fish-type</key>
+		<dict>
+			<key>dataField</key>
+			<string>Species</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>Bass</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Bluegill</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Bluntnose minnow</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Carp</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Catfish</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Flounder</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Goldfish</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Green sunfish</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Trout</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Walleye</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Yellow perch</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Other fish</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Unknown fish</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>animal-howmany</string>
+			<key>title</key>
+			<string>What type of fish is it?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>grass-howmuch</key>
+		<dict>
+			<key>dataField</key>
+			<string>HowMany</string>
+			<key>dataFieldType</key>
+			<string>int</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>icon</key>
+					<string>seq-grass-almostnone.png</string>
+					<key>label</key>
+					<string>Almost None</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-grass-lessthanhalf.png</string>
+					<key>label</key>
+					<string>Less Than Half</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-grass-abouthalf.png</string>
+					<key>label</key>
+					<string>About Half</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-grass-morethanhalf.png</string>
+					<key>label</key>
+					<string>More Than Half</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-grass-almostall.png</string>
+					<key>label</key>
+					<string>Almost All</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>what-energy-role-plant</string>
+			<key>title</key>
+			<string>How much grass is in your zone?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>insect-type</key>
+		<dict>
+			<key>dataField</key>
+			<string>Species</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>Ants, Bees, or Wasps…</string>
+					<key>next</key>
+					<string>insect-type-abw</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Cricket, Katydid, or Grasshopper…</string>
+					<key>next</key>
+					<string>insect-type-ckg</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Fly or Mosquito…</string>
+					<key>next</key>
+					<string>insect-type-fm</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Beetle…</string>
+					<key>next</key>
+					<string>insect-type-beetle</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Butterfly or Moth…</string>
+					<key>next</key>
+					<string>insect-type-bm</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Cicada</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Leafhopper</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Aphid or Other True bug…</string>
+					<key>next</key>
+					<string>insect-type-bug</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Earwig</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Damselfly or Dragonfly…</string>
+					<key>next</key>
+					<string>insect-type-dd</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Other insect group…</string>
+					<key>next</key>
+					<string>insect-type-other</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Unknown Insect</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>animal-howmany</string>
+			<key>title</key>
+			<string>What type of insect is it?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>insect-type-abw</key>
+		<dict>
+			<key>dataField</key>
+			<string>Species</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>Ant</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Bee</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Wasp</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>animal-howmany</string>
+			<key>title</key>
+			<string>Ant, Bee, or Wasp?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>insect-type-beetle</key>
+		<dict>
+			<key>dataField</key>
+			<string>Species</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>Lady beetle</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Ground beetle</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Click beetle</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Weevil</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Other beetle</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Unknown beetle</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>animal-howmany</string>
+			<key>title</key>
+			<string>What type of beetle is it?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>insect-type-bm</key>
+		<dict>
+			<key>dataField</key>
+			<string>Species</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>Moth</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Monarch butterfly</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Skipper</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>White or sulphur butterfly</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Brushfoot butterfly</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Swallowtail butterfly</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Copper or blue butterfly</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Satyr or wood nymph butterfly</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Other butterfly</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Unknown butterfly</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>animal-howmany</string>
+			<key>title</key>
+			<string>What type is it?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>insect-type-bug</key>
+		<dict>
+			<key>dataField</key>
+			<string>Species</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>Aphid</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Stink bug</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Box elder bug</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Other true bug</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Unknown true bug</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>animal-howmany</string>
+			<key>title</key>
+			<string>What type is it?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>insect-type-ckg</key>
+		<dict>
+			<key>dataField</key>
+			<string>Species</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>Cricket</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Katydid</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Grasshopper</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>animal-howmany</string>
+			<key>title</key>
+			<string>Cricket, Katydid, or Grasshopper?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>insect-type-dd</key>
+		<dict>
+			<key>dataField</key>
+			<string>Species</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>Damselfly</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Dragonfly</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>animal-howmany</string>
+			<key>title</key>
+			<string>Damselfly or Dragonfly?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>insect-type-fm</key>
+		<dict>
+			<key>dataField</key>
+			<string>Species</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>House fly</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Mosquito</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Crane fly</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Flower fly</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Midge</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Other fly</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Unknown fly</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>animal-howmany</string>
+			<key>title</key>
+			<string>What type is it?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>insect-type-other</key>
+		<dict>
+			<key>dataField</key>
+			<string>Species</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>Lacewing</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Mayfly</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Cockroach</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Silverfish</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Walkingstick</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Praying mantid</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Termite</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Thrips</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Springtail</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Other insect</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Unknown insect</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>animal-howmany</string>
+			<key>title</key>
+			<string>What type of insect is it?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>mammal-type</key>
+		<dict>
+			<key>dataField</key>
+			<string>Species</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>Human</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>E. fox squirrel</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Domestic dog</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Domestic cat</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>House mouse</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>White-footed mouse</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Norway rat</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Unknown rodent</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Raccoon</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Red squirrel</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>E. chipmunk</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>E. cottontail rabbit</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Striped skunk</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Woodchuck</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Virginia opossum</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Meadow vole</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Least weasel</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Big brown bat</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Unknown bat</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>White-tailed deer</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Coyote</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Other mammal</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Unknown mammal</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>animal-howmany</string>
+			<key>title</key>
+			<string>What type of mammal is it?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>mollusk-type</key>
+		<dict>
+			<key>dataField</key>
+			<string>Species</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>Ribbed dome snail</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Amber snail</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Toothed pupa snail</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Flat disc snail</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Pond snail</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Smooth grass snail</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Glossy glass snail</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Striped slug</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Gray field slug</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Other snail</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Unknown snail</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Other slug</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Unknown slug</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>animal-howmany</string>
+			<key>title</key>
+			<string>What type of mollusk is it?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>myriapod-type</key>
+		<dict>
+			<key>dataField</key>
+			<string>Species</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>Millipedes</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Centipedes</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Other myriapod</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Unknown myriapod</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>animal-howmany</string>
+			<key>title</key>
+			<string>What type of myriapod is it?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>notes</key>
+		<dict>
+			<key>dataField</key>
+			<string>Notes</string>
+			<key>rightButtonAction</key>
+			<string>_obslist</string>
+			<key>title</key>
+			<string>Enter Notes (optional)</string>
+			<key>type</key>
+			<string>Text</string>
+		</dict>
+		<key>plant-howmany</key>
+		<dict>
+			<key>dataField</key>
+			<string>HowMany</string>
+			<key>next</key>
+			<string>what-energy-role-plant</string>
+			<key>title</key>
+			<string>How many plants?</string>
+			<key>type</key>
+			<string>Count</string>
+		</dict>
+		<key>plant-kind</key>
+		<dict>
+			<key>dataField</key>
+			<string>Species</string>
+			<key>helpText</key>
+			<string>Grass is ankle height or below. Vines twist and turn around.\nShrubs and bushes are bigger, and usually have lots of stems from a central location.\nTrees have a central trunk and usually grow very tall.</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>Grass</string>
+					<key>next</key>
+					<string>grass-howmuch</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Weeds, herbs, or other small plants</string>
+					<key>next</key>
+					<string>plant-howmany</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Vine</string>
+					<key>next</key>
+					<string>plant-howmany</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Shrub or Bush</string>
+					<key>next</key>
+					<string>plant-howmany</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Tree</string>
+					<key>next</key>
+					<string>plant-howmany</string>
+				</dict>
+			</array>
+			<key>title</key>
+			<string>What kind of plant?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>reptile-type</key>
+		<dict>
+			<key>dataField</key>
+			<string>Species</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>Five-lined skink</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Other lizard</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Unknown lizard</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>E. garter snake</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Butler&apos;s garter snake</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Brown snake</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>N. water snake</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>E. massasauga rattlesnake</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Northern red-bellied snake</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Smooth green snake</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>E. hognose snake</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Other snake</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Unknown snake</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Painted turtle</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Snapping turtle</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Other turtle</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Unknown turtle</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Unknown reptile</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>animal-howmany</string>
+			<key>title</key>
+			<string>What type of reptile is it?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>what-energy-role-animal</key>
+		<dict>
+			<key>helpText</key>
+			<string>How and where does it get its energy from?</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>dataField</key>
+					<string>EnergyRole</string>
+					<key>label</key>
+					<string>Producer</string>
+					<key>next</key>
+					<string>where-is-it</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Consumer</string>
+					<key>next</key>
+					<string>consumer-type-animal</string>
+				</dict>
+			</array>
+			<key>title</key>
+			<string>What energy role does it have?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>what-energy-role-plant</key>
+		<dict>
+			<key>helpText</key>
+			<string>How and where does it get its energy from?</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>dataField</key>
+					<string>EnergyRole</string>
+					<key>label</key>
+					<string>Producer</string>
+					<key>next</key>
+					<string>notes</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Consumer</string>
+					<key>next</key>
+					<string>consumer-type-plant</string>
+				</dict>
+			</array>
+			<key>title</key>
+			<string>What energy role does it have?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>what-is-it-doing</key>
+		<dict>
+			<key>dataField</key>
+			<string>Behavior</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>icon</key>
+					<string>seq-moving.png</string>
+					<key>label</key>
+					<string>Moving</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-eating.png</string>
+					<key>label</key>
+					<string>Eating</string>
+					<key>next</key>
+					<string>what-is-it-eating</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-drinking.png</string>
+					<key>label</key>
+					<string>Drinking</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-resting.png</string>
+					<key>label</key>
+					<string>Resting or Sleeping</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-signaling.png</string>
+					<key>label</key>
+					<string>Signaling</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-building.png</string>
+					<key>label</key>
+					<string>Building</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-courting.png</string>
+					<key>label</key>
+					<string>Courting</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-fighting.png</string>
+					<key>label</key>
+					<string>Fighting</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-grooming.png</string>
+					<key>label</key>
+					<string>Grooming</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Other</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>notes</string>
+			<key>title</key>
+			<string>What is it doing?</string>
+			<key>type</key>
+			<string>Choose0</string>
+		</dict>
+		<key>what-is-it-eating</key>
+		<dict>
+			<key>dataField</key>
+			<string>WhatEating</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>Seeds</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Living Animal</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Living Leaves</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Other Live Plant Parts</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Dead Animal</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Dead Leaves</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Other Dead Plant Parts</string>
+				</dict>
+				<dict>
+					<key>label</key>
+					<string>Garbage/Trash</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>notes</string>
+			<key>title</key>
+			<string>What is it eating?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>what-sensed</key>
+		<dict>
+			<key>dataField</key>
+			<string>WhatSensed</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>dataField</key>
+					<string>Group</string>
+					<key>icon</key>
+					<string>seq-plant.png</string>
+					<key>label</key>
+					<string>Plant</string>
+					<key>next</key>
+					<string>plant-kind</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-liveanimal.png</string>
+					<key>label</key>
+					<string>Live Animal</string>
+					<key>next</key>
+					<string>animal-group</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-track.png</string>
+					<key>label</key>
+					<string>Track</string>
+					<key>next</key>
+					<string>animal-group</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-othersigns.png</string>
+					<key>label</key>
+					<string>Other Signs</string>
+					<key>next</key>
+					<string>animal-group</string>
+				</dict>
+			</array>
+			<key>title</key>
+			<string>What do you sense?</string>
+			<key>type</key>
+			<string>Choose1</string>
+		</dict>
+		<key>where-is-it</key>
+		<dict>
+			<key>dataField</key>
+			<string>Microhabitat</string>
+			<key>items</key>
+			<array>
+				<dict>
+					<key>icon</key>
+					<string>seq-bare-ground.png</string>
+					<key>label</key>
+					<string>Something hard</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-in-water.png</string>
+					<key>label</key>
+					<string>In water</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-near-water.png</string>
+					<key>label</key>
+					<string>Near water</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-under-something.png</string>
+					<key>label</key>
+					<string>Under something</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-in-the-soil.png</string>
+					<key>label</key>
+					<string>In the soil</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-leaf-litter-or-mulch.png</string>
+					<key>label</key>
+					<string>Leaf, litter, or mulch</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-short-grass.png</string>
+					<key>label</key>
+					<string>Short grass</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-tall-grass.png</string>
+					<key>label</key>
+					<string>Tall grass</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-bushes.png</string>
+					<key>label</key>
+					<string>Bushes</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-single-tree.png</string>
+					<key>label</key>
+					<string>Single tree</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-trees-together.png</string>
+					<key>label</key>
+					<string>Trees together</string>
+				</dict>
+				<dict>
+					<key>icon</key>
+					<string>seq-in-the-air.png</string>
+					<key>label</key>
+					<string>In the air</string>
+				</dict>
+			</array>
+			<key>next</key>
+			<string>what-is-it-doing</string>
+			<key>title</key>
+			<string>Where is it?</string>
+			<key>type</key>
+			<string>ChooseN</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
