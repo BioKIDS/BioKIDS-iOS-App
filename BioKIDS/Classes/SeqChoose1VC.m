@@ -2,7 +2,7 @@
   SeqChoose1VC.m
   Created 8/8/11.
 
-  Copyright (c) 2011 The Regents of the University of Michigan
+  Copyright (c) 2011-2013 The Regents of the University of Michigan
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
@@ -49,6 +49,8 @@
 	{
 		self.mScreenDict = aScreen;
 		self.mObservation = aObservation;
+		self.view.backgroundColor = [[BioKIDSUtil sharedBioKIDSUtil]
+									 appBackgroundColor];
 
 		self.mHasIcons = NO;
 		NSArray *items = [self.mScreenDict objectForKey:@"items"];
@@ -101,9 +103,12 @@
 		// Create table header view (on screen instructions).
 		headerText = [headerText stringByReplacingOccurrencesOfString:@"\\n"
 														   withString:@"\n"];
-		[[BioKIDSUtil sharedBioKIDSUtil] addTextHeaderForTable:self.tableView
-														  text:headerText];		
+		UIView *v = [bku viewForText:headerText
+									 withWidth:self.tableView.frame.size.width];
+		self.tableView.tableHeaderView = v;
 	}
+	else
+		[bku addEmptyHeaderAndFooterForTable:self.tableView];
 }
 
 

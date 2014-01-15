@@ -6,6 +6,12 @@
 	<array>
 		<dict>
 			<key>icon</key>
+			<string>blank.png</string>
+			<key>name</key>
+			<string>None</string>
+		</dict>
+		<dict>
+			<key>icon</key>
 			<string>tracker-isoke.png</string>
 			<key>name</key>
 			<string>Isoke</string>

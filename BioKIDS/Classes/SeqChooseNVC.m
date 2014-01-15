@@ -47,7 +47,9 @@
 
 
 // Constants:
+const CGFloat kImageSpacing = 4.0;
 const NSInteger kCheckMarkImageTag = 1;
+const NSInteger kItemImageTag = 2;
 
 -(id)initWithScreen:(NSDictionary *)aScreen
 		observation:(Observation *)aObservation
@@ -118,9 +120,11 @@ const NSInteger kCheckMarkImageTag = 1;
 {
 	[super viewDidLoad];
 
-	self.tableView.backgroundView = nil;	// Needed for transparent background.
-
 	BioKIDSUtil *bku = [BioKIDSUtil sharedBioKIDSUtil];
+	self.tableView.backgroundView = nil;	// Needed for transparent background.
+	self.view.backgroundColor = [bku appBackgroundColor];
+	[bku addEmptyHeaderAndFooterForTable:self.tableView];
+
 	[bku useBackButtonLabel:self];
 	NSString *title = [self.mScreenDict objectForKey:@"title"];
 	[bku configureNavTitle:title forVC:self];
@@ -187,8 +191,6 @@ const NSInteger kCheckMarkImageTag = 1;
 		// the checkmark (on left hand side).
 		// Create with unchecked image; will be reset below.
 		UIImage *img = self.mUncheckedImage;
-		cell.indentationLevel = 1;
-		cell.indentationWidth = img.size.width;	// Make room for checkmark.
 		UIImageView *iv = [[UIImageView alloc] initWithImage:img];
 		iv.tag = kCheckMarkImageTag;
 		[cell.contentView addSubview:iv];
@@ -204,13 +206,31 @@ const NSInteger kCheckMarkImageTag = 1;
 	{
 		cell.textLabel.text = [item objectForKey:@"label"];
 
+		// Add image.  As of iOS7, we cannot use cell.imageView because it
+		// does not respect cell.indentationLevel.
 		UIImage *img = nil;
 		NSString *imgName = [item objectForKey:@"icon"];
 		if (imgName)
 			img = [UIImage imageNamed:imgName];
 		if (!img)
 			img = [UIImage imageNamed:@"blank-40.png"];
-		cell.imageView.image = img;
+
+		UIView *v = [cell.contentView viewWithTag:kItemImageTag];
+		if (v)
+			[v removeFromSuperview];
+		UIImageView *iv = [[UIImageView alloc] initWithImage:img];
+		iv.tag = kItemImageTag;
+		CGFloat chkMarkImageWidth = self.mUncheckedImage.size.width;
+		CGRect r = iv.frame;
+		r.origin.x += chkMarkImageWidth + kImageSpacing;
+		iv.frame = r;
+		[cell.contentView addSubview:iv];
+		[iv release];
+
+		// Make room for checkmark and this image.
+		cell.indentationLevel = 1;
+		cell.indentationWidth = chkMarkImageWidth + kImageSpacing
+								+ img.size.width;
 	}
 
 	return cell;

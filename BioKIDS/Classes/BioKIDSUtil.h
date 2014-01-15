@@ -2,7 +2,7 @@
   BioKIDSUtil.h
   Created 8/9/11.
 
-  Copyright (c) 2011 The Regents of the University of Michigan
+  Copyright (c) 2011-2013 The Regents of the University of Michigan
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
@@ -26,6 +26,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Observation.h"
+#import "BioKIDSLocationManager.h"
 
 
 typedef enum
@@ -34,15 +35,19 @@ typedef enum
 	UploadStatusInProgress
 } BioKIDSUploadStatus;
 
-@interface BioKIDSUtil : NSObject
+@interface BioKIDSUtil : NSObject<BioKIDSLocationManagerDelegate>
 {
 	@private BOOL mIsFinishingSequence;
+	@private CLLocation *mCachedLocation;
+	@private BioKIDSLocationManager *mBioKIDSLocationManager;	// non-nil if currently fetching location
 	@private BioKIDSUploadStatus mUploadStatus;
 	@private NSArray *mObsToUpload;
 	@private NSURLConnection *mConnection;
 }
 
 @property (nonatomic, assign) BOOL mIsFinishingSequence;
+@property (nonatomic, retain) CLLocation *mCachedLocation;
+@property (nonatomic, retain) BioKIDSLocationManager *mBioKIDSLocationManager;
 @property (nonatomic, assign) BioKIDSUploadStatus mUploadStatus;
 @property (nonatomic, retain) NSArray *mObsToUpload;
 @property (nonatomic, retain) NSURLConnection *mConnection;
@@ -50,9 +55,13 @@ typedef enum
 
 // Declare public methods.
 + (BioKIDSUtil *)sharedBioKIDSUtil;
+- (BOOL) systemVersionIsAtLeast:(NSString *)aVersion;
+- (UIColor *)titleTextColor;
+- (UIColor *)appBackgroundColor;
 - (void)showAlert:(NSString *)aMsg delegate:(id<UIAlertViewDelegate>)aDelegate;
 - (void) closePopoversAndAlerts:(UIView *)aParentView;
 - (BOOL)haveSettings;
+- (BOOL)isPersonalUse;
 - (void)useBackButtonLabel:(UIViewController *)aVC;
 - (void)configureNavTitle:(NSString *)aTitle forVC:(UIViewController *)aVC;
 - (void)pushViewControllerForScreen:(NSString *)aName
@@ -61,10 +70,22 @@ typedef enum
 - (BOOL)sequenceViewIsDisappearingDueToBack:(UIViewController *)aVC;
 - (void)configureSeqCellLabel:(UITableViewCell *)aCell;
 - (UIButton *)nextButtonForView:(CGFloat)aParentViewWidth;
-- (void)addTextHeaderForTable:(UITableView *)aTableView text:(NSString *)aText;
+- (UIFont *)fontForTextView;
+- (UIView *)viewForText:(NSString *)aText withWidth:(CGFloat)aWidth;
+- (CGFloat) tableSectionHeaderSideMargin;
 - (void)resizeTextHeaderForTable:(UITableView *)aTableView;
+- (void) addEmptyHeaderAndFooterForTable:(UITableView *)aTableView;
+- (CGFloat) idealHeightForString:(NSString *)aString withFont:(UIFont *)aFont
+				   lineBreakMode:(NSLineBreakMode)aLineBreakMode
+						   width:(CGFloat)aWidth;
+- (void)useLowestPossiblePhotoID;
+- (NSString *)nextPhotoFileNameWithTracker:(NSString *)aTracker;
+- (void) startFetchingLocation;
+- (CLLocation *)recentValidLocation;
 - (NSUInteger)prepareForUpload;
 - (void)discardUploadData:(BOOL)aDeleteObservations;
+- (NSMutableString *)csvForObservations;
+- (NSArray *)imagePathsForObservations;
 - (BioKIDSUploadStatus)startUpload;
 - (BioKIDSUploadStatus)uploadStatus;
 - (OSStatus)storePassword:(NSString *)aPassword;

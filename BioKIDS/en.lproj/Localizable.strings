@@ -2,7 +2,7 @@
   Localizable.strings
   Created 8/8/11.
 
-  Copyright (c) 2011 The Regents of the University of Michigan
+  Copyright (c) 2011-2014 The Regents of the University of Michigan
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
@@ -30,6 +30,10 @@
 "BackTitle" = "Back";
 "NextTitle" = "Next";
 
+"ClassroomUsePrompt" = "Welcome to BioKIDS!\n\nDo you plan to use this app in a classroom or for your personal use?\n\n(You can modify your choice in Settings.)";
+"ClassroomUseTitle" = "Classroom";
+"PersonalUseTitle" = "Personal";
+
 "CancelTitle" = "Cancel";
 "DeleteObsTitle" = "Delete This Observation";
 "UnableToDeleteObservation" = "Unable to delete observation.";
@@ -50,7 +54,7 @@
 "GrassCoverage4" = "Almost all";
 
 "ObservationDetailsTitle" = "Observation";
-"HTMLLabelBioKIDSID" = "BioKIDS ID#";
+"HTMLLabelBioKIDSID" = "School / Classroom:";
 "HTMLLabelTracker" = "Tracker Name:";
 "HTMLLabelSense" = "Sense:";
 "HTMLLabelWhatSensed" = "What Sensed:";
@@ -62,12 +66,23 @@
 "HTMLLabelMicrohabitat" = "Microhabitat:";
 "HTMLLabelBehavior" = "Behavior:";
 "HTMLLabelEating" = "Eating:";
+"HTMLLabelLocationDesc" = "Location:";
+"HTMLLabelGeoLocation" = "Geolocation:";
+"HTMLShowOnMapFmt" = "<a href=\"http://maps.apple.com/?q=%f,%f\">Show Location in Maps</a>";
 "HTMLLabelNotes" = "Notes:";
 
-"ServerTitle" = "Save To Server";
-"NoObservationsToUpload" = "There are no observations that need to be saved to the server.";
-"OneObservationToUpload" = "There is one observation that needs to be saved to the server.";
-"ObservationsToUploadFmt" = "There are %d observations that need to be saved to the server.";
+"NoLatLongMsg" = "Not available";
+
+"ShareObservationsTitle" = "Share Observations";
+"NoObservationsToUpload" = "There are no observations to share.";
+"OneObservationToUpload" = "There is one observation that may be shared.";
+"ObservationsToUploadFmt" = "There are %d observations that may be shared.";
+
+"NoEmailSettings" = "Please check your Mail settings (this device does not appear to be configured for email).";
+"SendEmailErrorFmt" = "Unable to send message (%@).";
+"DeleteAfterEmailPrompt" = "Your observations were shared via email.  Would you like to delete them?\nDeletion cannot be undone.";
+"EmailSubject" = "BioKIDS observations";
+
 "Uploading" = "Sending your observations to the server... please wait.";
 "UploadOK" = "Your observations have been saved.";
 "UploadErrorFmt" = "Your last save attempt failed (%@).";
@@ -81,7 +96,8 @@
 "OKButtonLabel" = "OK";
 
 "SettingsTitle" = "Settings";
-"SettingsHeader" = "Your teacher will tell you your BioKIDS ID #. Be sure to enter your team's tracker name, and the zone where you will be working. Do this before you start collecting data!";
+"PersonalSettingsHeader" = "When using the app in personal mode, the following information is optional.  Tap an item to make changes.";
+"ClassroomSettingsHeader" = "Your teacher will tell you what to enter for School/Classroom. Be sure to enter your team's tracker name, and the zone where you will be working. Do this before you start collecting data! Tap an item to make changes.";
 "SettingsTrackerLabel" = "Tracker Name";
 "SettingsChooseTrackerTitle" = "Select a Tracker Name";
 "SettingsZoneLabel" = "Zone";

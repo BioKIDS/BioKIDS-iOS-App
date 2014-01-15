@@ -6,6 +6,10 @@
 	<array>
 		<dict>
 			<key>name</key>
+			<string>None</string>
+		</dict>
+		<dict>
+			<key>name</key>
 			<string>Zone A</string>
 		</dict>
 		<dict>

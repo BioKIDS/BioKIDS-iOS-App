@@ -2,7 +2,7 @@
   SettingsVC.m
   Created 8/11/11.
 
-  Copyright (c) 2011 The Regents of the University of Michigan
+  Copyright (c) 2011-2013 The Regents of the University of Michigan
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
@@ -32,17 +32,18 @@
 // Declare private methods.
 @interface SettingsVC()
 - (void) cellTextFromPref:(UITableViewCell *)aCell prefKey:(NSString *)aPrefKey;
+- (void) onClassroomUsePrefChange:(NSNotification *)aNotification;
 @end
 
 
 @implementation SettingsVC
 
-@synthesize mIDCell;
+@synthesize mClassroomToggleCell, mIDCell;
 
 // Define constants.
-const NSInteger kIDRow = 0;
-const NSInteger kTrackerRow = 1;
-const NSInteger kZoneRow = 2;
+static const NSInteger kIDRow = 0;
+static const NSInteger kTrackerRow = 1;
+static const NSInteger kZoneRow = 2;
 
 - (id)init
 {
@@ -57,6 +58,7 @@ const NSInteger kZoneRow = 2;
 
 - (void)dealloc
 {
+	self.mClassroomToggleCell = nil;
 	self.mIDCell = nil;
 
 	[super dealloc];
@@ -77,21 +79,16 @@ const NSInteger kZoneRow = 2;
 {
 	[super viewDidLoad];
 
-	self.tableView.backgroundView = nil;	// Needed for transparent background.
 	self.navigationItem.title = NSLocalizedString(@"SettingsTitle", nil);
 
-	// Create table header view (on screen instructions).
-	NSString *s = NSLocalizedString(@"SettingsHeader", nil);
-	[[BioKIDSUtil sharedBioKIDSUtil] addTextHeaderForTable:self.tableView
-													  text:s];
-}
+	BioKIDSUtil *bku = [BioKIDSUtil sharedBioKIDSUtil];
+	self.tableView.backgroundView = nil;	// Needed for transparent background.
+	self.view.backgroundColor = [bku appBackgroundColor];
+	[bku addEmptyHeaderAndFooterForTable:self.tableView];
 
-
-- (void)viewDidUnload
-{
-	[super viewDidUnload];
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
+	[[NSNotificationCenter defaultCenter] addObserver:self
+						 selector:@selector(onClassroomUsePrefChange:)
+							 name:kNotificationClassroomUseChanged object:nil];
 }
 
 
@@ -99,15 +96,13 @@ const NSInteger kZoneRow = 2;
 {
 	[super viewWillAppear:aAnimated];
 
-	NSIndexPath *ip = [NSIndexPath indexPathForRow:kTrackerRow inSection:0];
+	NSIndexPath *ip = [NSIndexPath indexPathForRow:kTrackerRow inSection:1];
 	UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:ip];
 	[self cellTextFromPref:cell prefKey:kTrackerKey];
 
-	ip = [NSIndexPath indexPathForRow:kZoneRow inSection:0];
+	ip = [NSIndexPath indexPathForRow:kZoneRow inSection:1];
 	cell = [self.tableView cellForRowAtIndexPath:ip];
 	[self cellTextFromPref:cell prefKey:kZoneKey];
-
-	[[BioKIDSUtil sharedBioKIDSUtil] resizeTextHeaderForTable:self.tableView];
 }
 
 
@@ -117,35 +112,38 @@ const NSInteger kZoneRow = 2;
 }
 
 
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)aFromOrient
-{
-	[[BioKIDSUtil sharedBioKIDSUtil] resizeTextHeaderForTable:self.tableView];	
-}
-
-
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView
 {
-	return 1;
+	return 2;
 }
 
 
-- (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)aSection
 {
-	return 3;
+	return (0 == aSection) ? 1 : 3;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView
 							cellForRowAtIndexPath:(NSIndexPath *)aIndexPath
 {
+	BOOL isClassroomToggle = (0 == aIndexPath.section);
 	BOOL isIDCell = (kIDRow == aIndexPath.row);
-	NSString *cellID = isIDCell ? @"IDCell" : @"OtherCell";
+	NSString *cellID = isClassroomToggle ? @"ClassroomToggleCell"
+										: isIDCell ? @"IDCell" : @"OtherCell";
 
 	UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:cellID];
 	if (cell == nil)
 	{
-		if (isIDCell)
+		if (isClassroomToggle)
+		{
+			[[NSBundle mainBundle] loadNibNamed:@"ClassroomToggleCell"
+										  owner:self options:nil];
+			[self.mClassroomToggleCell setupCell];
+			cell = self.mClassroomToggleCell;
+		}
+		else if (isIDCell)
 		{
 			[[NSBundle mainBundle] loadNibNamed:@"BioKIDSIDCell" owner:self
 										options:nil];
@@ -163,8 +161,6 @@ const NSInteger kZoneRow = 2;
 	// Configure the cell.
 	switch (aIndexPath.row)
 	{
-		case kIDRow:
-			break;
 		case kTrackerRow:
 			cell.textLabel.text = NSLocalizedString(@"SettingsTrackerLabel", nil);
 			[self cellTextFromPref:cell prefKey:kTrackerKey];
@@ -184,6 +180,13 @@ const NSInteger kZoneRow = 2;
 #pragma mark - Table view delegate
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)aIndexPath
 {
+	// Unselect cell in toggle section.
+	if (0 == aIndexPath.section)
+	{
+		[aTableView deselectRowAtIndexPath:aIndexPath animated:NO];
+		return;
+	}
+
 	NSString *plistFile = nil;
 	NSString *prefKey = nil;
 	NSString *title = nil;
@@ -216,6 +219,40 @@ const NSInteger kZoneRow = 2;
 }
 
 
+- (CGFloat)tableView:(UITableView *)aTableView heightForHeaderInSection:(NSInteger)aSection
+{
+	if (0 == aSection)
+		return 0.0;
+
+	BioKIDSUtil *bku = [BioKIDSUtil sharedBioKIDSUtil];
+	NSString *key = ([bku isPersonalUse])
+					? @"PersonalSettingsHeader" : @"ClassroomSettingsHeader";
+	NSString *text = NSLocalizedString(key, nil);
+
+	UIFont *font = [bku fontForTextView];
+	CGFloat marginLR = [bku tableSectionHeaderSideMargin];
+	CGFloat width = aTableView.frame.size.width - (2 * marginLR);
+	return [bku idealHeightForString:text withFont:font
+					   lineBreakMode:NSLineBreakByWordWrapping
+							   width:width];
+}
+
+
+- (UIView *)tableView:(UITableView *)aTableView
+								viewForHeaderInSection:(NSInteger)aSection
+{
+	if (0 == aSection)
+		return nil;
+
+	BioKIDSUtil *bku = [BioKIDSUtil sharedBioKIDSUtil];
+	NSString *key = ([bku isPersonalUse])
+					? @"PersonalSettingsHeader" : @"ClassroomSettingsHeader";
+	NSString *text = NSLocalizedString(key, nil);
+
+	return [bku viewForText:text withWidth:aTableView.frame.size.width];
+}
+
+
 #pragma mark Private Methods
 - (void) cellTextFromPref:(UITableViewCell *)aCell prefKey:(NSString *)aPrefKey
 {
@@ -224,6 +261,14 @@ const NSInteger kZoneRow = 2;
 	if (!s)
 		s = @"";
 	aCell.detailTextLabel.text = s;
+}
+
+
+- (void) onClassroomUsePrefChange:(NSNotification *)aNotification
+{
+	// Note: calling reloadSections does not work; the headerLabel subview
+	// is resized to the width of the entire table (no right / bottom margin).
+	[self.tableView reloadData];	// TODO: this causes the UISwitch animation to be lost :(
 }
 
 @end

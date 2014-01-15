@@ -2,7 +2,7 @@
   HomeVC.m
   Created 9/19/11.
 
-  Copyright (c) 2011 The Regents of the University of Michigan
+  Copyright (c) 2011-2013 The Regents of the University of Michigan
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
@@ -43,7 +43,7 @@
 
 @implementation HomeVC
 
-@synthesize mBGImageView, mObserveButton;
+@synthesize mBGImageView, mKidsImageView, mObserveButton;
 @synthesize mBioKIDSIDLabel, mTrackerLabel, mZoneLabel;
 
 
@@ -62,6 +62,7 @@
 - (void)dealloc
 {
 	self.mBGImageView = nil;
+	self.mKidsImageView = nil;
 	self.mObserveButton = nil;
 	self.mBioKIDSIDLabel = nil;
 	self.mTrackerLabel = nil;
@@ -81,6 +82,39 @@
 
 
 #pragma mark - View lifecycle
+- (void)viewDidLoad
+{
+	[super viewDidLoad];
+
+	// Set kids" image.
+	BOOL isIPad = [[UIDevice currentDevice] userInterfaceIdiom]
+						== UIUserInterfaceIdiomPad;
+	NSString *kidsFileName = (isIPad) ? @"home-kids-ipad.png"
+									  : @"home-kids-iphone.png";
+	UIImage *kidsImage = [UIImage imageNamed:kidsFileName];
+	self.mKidsImageView.image = kidsImage;
+	CGRect kidsRect = self.mKidsImageView.frame;
+	kidsRect.size = kidsImage.size;
+	self.mKidsImageView.frame = kidsRect;
+
+	// Set observe button highlight image.
+	NSString *highlightFileName = (isIPad) ? @"observe-highlight-ipad.png"
+										   : @"observe-highlight-iphone.png";
+	UIImage *highlightImage = [UIImage imageNamed:highlightFileName];
+	[self.mObserveButton setBackgroundImage:highlightImage
+						 forState:UIControlStateHighlighted];
+	CGRect observeBtnRect = self.mObserveButton.frame;
+	observeBtnRect.size = highlightImage.size;
+	self.mObserveButton.frame = observeBtnRect;
+	if (!isIPad)
+	{
+		UIFont *font = [self.mObserveButton.titleLabel.font fontWithSize:30.0];
+		self.mObserveButton.titleLabel.font = font;
+		self.mObserveButton.titleEdgeInsets = UIEdgeInsetsMake(50.0, 0.0, 0.0, 0.0);
+	}
+}
+
+
 - (void) viewWillAppear:(BOOL)aAnimated
 {
 	[super viewWillAppear:aAnimated];
@@ -89,15 +123,17 @@
 
 	[self configureViewForOrientationAndSize];
 	[self configureSettingsLabels];
+
+	[[BioKIDSUtil sharedBioKIDSUtil] startFetchingLocation];
 }
 
 
-- (void)viewDidUnload
+#ifdef BIOKIDS_LAUNCH_IMAGE
+- (BOOL) prefersStatusBarHidden
 {
-	[super viewDidUnload];
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
+	return YES;
 }
+#endif
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)aOrientation
@@ -164,48 +200,23 @@
 {
 	UIInterfaceOrientation orientation =
 					[[UIApplication sharedApplication] statusBarOrientation];
-	BOOL isLargeScreen = (self.view.frame.size.width > 480);
-	CGRect observeBtnRect = {0};
+	BOOL isIPad = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
 
+	// Set background image.
 	NSString *bgFileName = nil;
-	NSString *highlightFileName = nil;
 	if (UIDeviceOrientationIsLandscape(orientation))
 	{
-		if (isLargeScreen)
-		{
-			bgFileName = @"home-ipad-landscape.png";
-			highlightFileName = @"observe-highlight-ipad-landscape.png";
-			observeBtnRect = CGRectMake(150.0, 338.0, 719.0, 266.0);
-		}
-		else
-		{
-			bgFileName = @"home-iphone-landscape.png";
-			highlightFileName = @"observe-highlight-iphone-landscape.png";
-			observeBtnRect = CGRectMake(65.0, 136.0, 360.0, 146.0);
-		}
-	}
-	else if (isLargeScreen)
-	{
-		bgFileName = @"home-ipad-portrait.png";
-		highlightFileName = @"observe-highlight-ipad-portrait.png";
-		observeBtnRect = CGRectMake(23.0, 465.0, 718.0, 292.0);
+		bgFileName = (isIPad) ? @"home-ipad-landscape.png"
+							  : @"home-iphone-landscape.png";
 	}
 	else
 	{
-		bgFileName = @"home-iphone-portrait.png";
-		highlightFileName = @"observe-highlight-iphone-portrait.png";
-		observeBtnRect = CGRectMake(4.0, 178.0, 304.0, 154.0);
+		bgFileName = (isIPad) ? @"home-ipad-portrait.png"
+							  : @"home-iphone-portrait.png";
 	}
 
 	UIImage *bgImage = [UIImage imageNamed:bgFileName];
 	self.mBGImageView.image = bgImage;
-
-	self.mObserveButton.frame = observeBtnRect;
-	UIImage *highlightImage = nil;
-	if (highlightFileName)
-		highlightImage = [UIImage imageNamed:highlightFileName];
-	[self.mObserveButton setImage:highlightImage
-						 forState:UIControlStateHighlighted];		
 }
 
 
@@ -213,9 +224,7 @@
 {
 	NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
 
-	NSString *biokidsID = [ud stringForKey:kBioKIDSIDKey];
-	self.mBioKIDSIDLabel.text = (biokidsID) ?
-						[NSString stringWithFormat:@"# %@", biokidsID] : nil;
+	self.mBioKIDSIDLabel.text = [ud stringForKey:kBioKIDSIDKey];
 	self.mTrackerLabel.text = [ud stringForKey:kTrackerKey];
 	self.mZoneLabel.text = [ud stringForKey:kZoneKey];
 }
@@ -233,12 +242,12 @@
 
 - (BOOL)needToEnterSettings
 {
-	BioKIDSUtil *bu = [BioKIDSUtil sharedBioKIDSUtil];
-	if ([bu haveSettings])
+	BioKIDSUtil *bku = [BioKIDSUtil sharedBioKIDSUtil];
+	if ([bku haveSettings])
 		return NO;
 
 	NSString *s = NSLocalizedString(@"SettingsRequired", nil);
-	[bu showAlert:s delegate:self];
+	[bku showAlert:s delegate:self];
 	return YES;
 }
 

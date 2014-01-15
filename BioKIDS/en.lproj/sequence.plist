@@ -7,6 +7,17 @@
 		<key>_start</key>
 		<dict>
 			<key>dataField</key>
+			<string>ImagePath</string>
+			<key>next</key>
+			<string>how-sensed</string>
+			<key>title</key>
+			<string>What do you see?</string>
+			<key>type</key>
+			<string>Photo</string>
+		</dict>
+		<key>how-sensed</key>
+		<dict>
+			<key>dataField</key>
 			<string>HowSensed</string>
 			<key>items</key>
 			<array>
@@ -54,43 +65,43 @@
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Bullfrog</string>
+					<string>bullfrog</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Gray treefrog</string>
+					<string>gray treefrog</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Green frog</string>
+					<string>green frog</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Northern leopard frog</string>
+					<string>northern leopard frog</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Northern spring peeper</string>
+					<string>northern spring peeper</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Red-backed salamander</string>
+					<string>red-backed salamander</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Striped chorus frog</string>
+					<string>striped chorus frog</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Wood frog</string>
+					<string>wood frog</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Other frog</string>
+					<string>other frog</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Unknown frog</string>
+					<string>unknown frog</string>
 				</dict>
 			</array>
 			<key>next</key>
@@ -219,23 +230,23 @@
 			<array>
 				<dict>
 					<key>label</key>
-					<string>Earthworms</string>
+					<string>earthworms</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Leeches</string>
+					<string>leeches</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Nematode worms</string>
+					<string>nematode worms</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Other annelid</string>
+					<string>other annelid</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Unknown annelid</string>
+					<string>unknown annelid</string>
 				</dict>
 			</array>
 			<key>next</key>
@@ -259,27 +270,27 @@
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Harvestmen</string>
+					<string>harvestmen</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Ticks</string>
+					<string>ticks</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Mites</string>
+					<string>mites</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Pseudoscorpions</string>
+					<string>pseudoscorpions</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Other arachnid</string>
+					<string>other arachnid</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Unknown arachnid</string>
+					<string>unknown arachnid</string>
 				</dict>
 			</array>
 			<key>next</key>
@@ -297,51 +308,51 @@
 			<array>
 				<dict>
 					<key>label</key>
-					<string>Orb-weavers</string>
+					<string>orb-weavers</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Jumping spiders</string>
+					<string>jumping spiders</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Funnel-web spiders</string>
+					<string>funnel-web spiders</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Wolf spiders</string>
+					<string>wolf spiders</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Sheet-web spiders</string>
+					<string>sheet-web spiders</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Daddy long-legs spiders</string>
+					<string>daddy long-legs spiders</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Cobweb spiders</string>
+					<string>cobweb spiders</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Sac spiders</string>
+					<string>sac spiders</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Triangle spiders</string>
+					<string>triangle spiders</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Crab spiders</string>
+					<string>crab spiders</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Other spider</string>
+					<string>other spider</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Unknown spider</string>
+					<string>unknown spider</string>
 				</dict>
 			</array>
 			<key>next</key>
@@ -363,7 +374,7 @@
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>House sparrow</string>
+					<string>house sparrow</string>
 				</dict>
 				<dict>
 					<key>label</key>
@@ -375,23 +386,23 @@
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Rock dove (pigeon)</string>
+					<string>rock dove (pigeon)</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Northern cardinal</string>
+					<string>northern cardinal</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Morning dove</string>
+					<string>mourning dove</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Ring-billed gull</string>
+					<string>ring-billed gull</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>House finch</string>
+					<string>house finch</string>
 				</dict>
 				<dict>
 					<key>label</key>
@@ -399,47 +410,47 @@
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Mallard</string>
+					<string>mallard</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Blue jay</string>
+					<string>blue jay</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Black-capped chickadee</string>
+					<string>black-capped chickadee</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Downy woodpecker</string>
+					<string>downy woodpecker</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Killdeer</string>
+					<string>killdeer</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Great blue heron</string>
+					<string>great blue heron</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Turkey vulture</string>
+					<string>turkey vulture</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Domestic chicken</string>
+					<string>domestic chicken</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Peregrine falcon</string>
+					<string>peregrine falcon</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Other birds not listed</string>
+					<string>other birds not listed</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Unknown bird</string>
+					<string>unknown bird</string>
 				</dict>
 			</array>
 			<key>next</key>
@@ -507,7 +518,7 @@
 				</dict>
 			</array>
 			<key>next</key>
-			<string>notes</string>
+			<string>location</string>
 			<key>title</key>
 			<string>What type of consumer is it?</string>
 			<key>type</key>
@@ -521,19 +532,19 @@
 			<array>
 				<dict>
 					<key>label</key>
-					<string>Pillbugs (rolypolies)</string>
+					<string>pillbugs (roly polies)</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Crayfish</string>
+					<string>crayfish</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Other crustacean</string>
+					<string>other crustacean</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Unknown crustacean</string>
+					<string>unknown crustacean</string>
 				</dict>
 			</array>
 			<key>next</key>
@@ -551,55 +562,55 @@
 			<array>
 				<dict>
 					<key>label</key>
-					<string>Bass</string>
+					<string>bass</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Bluegill</string>
+					<string>bluegill</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Bluntnose minnow</string>
+					<string>bluntnose minnow</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Carp</string>
+					<string>carp</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Catfish</string>
+					<string>catfish</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Flounder</string>
+					<string>flounder</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Goldfish</string>
+					<string>goldfish</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Green sunfish</string>
+					<string>green sunfish</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Trout</string>
+					<string>trout</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Walleye</string>
+					<string>walleye</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Yellow perch</string>
+					<string>yellow perch</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Other fish</string>
+					<string>other fish</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Unknown fish</string>
+					<string>unknown fish</string>
 				</dict>
 			</array>
 			<key>next</key>
@@ -621,31 +632,31 @@
 					<key>icon</key>
 					<string>seq-grass-almostnone.png</string>
 					<key>label</key>
-					<string>Almost None</string>
+					<string>Almost none</string>
 				</dict>
 				<dict>
 					<key>icon</key>
 					<string>seq-grass-lessthanhalf.png</string>
 					<key>label</key>
-					<string>Less Than Half</string>
+					<string>Less than half</string>
 				</dict>
 				<dict>
 					<key>icon</key>
 					<string>seq-grass-abouthalf.png</string>
 					<key>label</key>
-					<string>About Half</string>
+					<string>About half</string>
 				</dict>
 				<dict>
 					<key>icon</key>
 					<string>seq-grass-morethanhalf.png</string>
 					<key>label</key>
-					<string>More Than Half</string>
+					<string>More than half</string>
 				</dict>
 				<dict>
 					<key>icon</key>
 					<string>seq-grass-almostall.png</string>
 					<key>label</key>
-					<string>Almost All</string>
+					<string>Almost all</string>
 				</dict>
 			</array>
 			<key>next</key>
@@ -663,67 +674,67 @@
 			<array>
 				<dict>
 					<key>label</key>
-					<string>Ants, Bees, or Wasps…</string>
+					<string>ants, bees, or wasps…</string>
 					<key>next</key>
 					<string>insect-type-abw</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Cricket, Katydid, or Grasshopper…</string>
+					<string>cricket, katydid, or grasshopper…</string>
 					<key>next</key>
 					<string>insect-type-ckg</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Fly or Mosquito…</string>
+					<string>fly or mosquito…</string>
 					<key>next</key>
 					<string>insect-type-fm</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Beetle…</string>
+					<string>beetle…</string>
 					<key>next</key>
 					<string>insect-type-beetle</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Butterfly or Moth…</string>
+					<string>butterfly or moth…</string>
 					<key>next</key>
 					<string>insect-type-bm</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Cicada</string>
+					<string>cicada</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Leafhopper</string>
+					<string>leafhopper</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Aphid or Other True bug…</string>
+					<string>aphid or other true bug…</string>
 					<key>next</key>
 					<string>insect-type-bug</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Earwig</string>
+					<string>earwig</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Damselfly or Dragonfly…</string>
+					<string>damselfly or dragonfly…</string>
 					<key>next</key>
 					<string>insect-type-dd</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Other insect group…</string>
+					<string>other insect group…</string>
 					<key>next</key>
 					<string>insect-type-other</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Unknown Insect</string>
+					<string>unknown insect</string>
 				</dict>
 			</array>
 			<key>next</key>
@@ -741,21 +752,21 @@
 			<array>
 				<dict>
 					<key>label</key>
-					<string>Ant</string>
+					<string>ant</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Bee</string>
+					<string>bee</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Wasp</string>
+					<string>wasp</string>
 				</dict>
 			</array>
 			<key>next</key>
 			<string>animal-howmany</string>
 			<key>title</key>
-			<string>Ant, Bee, or Wasp?</string>
+			<string>ant, bee, or wasp?</string>
 			<key>type</key>
 			<string>Choose1</string>
 		</dict>
@@ -767,27 +778,27 @@
 			<array>
 				<dict>
 					<key>label</key>
-					<string>Lady beetle</string>
+					<string>lady beetle</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Ground beetle</string>
+					<string>ground beetle</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Click beetle</string>
+					<string>click beetle</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Weevil</string>
+					<string>weevil</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Other beetle</string>
+					<string>other beetle</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Unknown beetle</string>
+					<string>unknown beetle</string>
 				</dict>
 			</array>
 			<key>next</key>
@@ -805,43 +816,43 @@
 			<array>
 				<dict>
 					<key>label</key>
-					<string>Moth</string>
+					<string>moth</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Monarch butterfly</string>
+					<string>monarch butterfly</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Skipper</string>
+					<string>skipper</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>White or sulphur butterfly</string>
+					<string>white or sulphur butterfly</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Brushfoot butterfly</string>
+					<string>brushfoot butterfly</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Swallowtail butterfly</string>
+					<string>swallowtail butterfly</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Copper or blue butterfly</string>
+					<string>copper or blue butterfly</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Satyr or wood nymph butterfly</string>
+					<string>satyr or wood nymph butterfly</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Other butterfly</string>
+					<string>other butterfly</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Unknown butterfly</string>
+					<string>unknown butterfly</string>
 				</dict>
 			</array>
 			<key>next</key>
@@ -859,23 +870,23 @@
 			<array>
 				<dict>
 					<key>label</key>
-					<string>Aphid</string>
+					<string>aphid</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Stink bug</string>
+					<string>stink bug</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Box elder bug</string>
+					<string>box elder bug</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Other true bug</string>
+					<string>other true bug</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Unknown true bug</string>
+					<string>unknown true bug</string>
 				</dict>
 			</array>
 			<key>next</key>
@@ -893,21 +904,21 @@
 			<array>
 				<dict>
 					<key>label</key>
-					<string>Cricket</string>
+					<string>cricket</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Katydid</string>
+					<string>katydid</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Grasshopper</string>
+					<string>grasshopper</string>
 				</dict>
 			</array>
 			<key>next</key>
 			<string>animal-howmany</string>
 			<key>title</key>
-			<string>Cricket, Katydid, or Grasshopper?</string>
+			<string>cricket, katydid, or grasshopper?</string>
 			<key>type</key>
 			<string>Choose1</string>
 		</dict>
@@ -919,17 +930,17 @@
 			<array>
 				<dict>
 					<key>label</key>
-					<string>Damselfly</string>
+					<string>damselfly</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Dragonfly</string>
+					<string>dragonfly</string>
 				</dict>
 			</array>
 			<key>next</key>
 			<string>animal-howmany</string>
 			<key>title</key>
-			<string>Damselfly or Dragonfly?</string>
+			<string>damselfly or dragonfly?</string>
 			<key>type</key>
 			<string>Choose1</string>
 		</dict>
@@ -941,31 +952,31 @@
 			<array>
 				<dict>
 					<key>label</key>
-					<string>House fly</string>
+					<string>house fly</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Mosquito</string>
+					<string>mosquito</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Crane fly</string>
+					<string>crane fly</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Flower fly</string>
+					<string>flower fly</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Midge</string>
+					<string>midge</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Other fly</string>
+					<string>other fly</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Unknown fly</string>
+					<string>unknown fly</string>
 				</dict>
 			</array>
 			<key>next</key>
@@ -983,47 +994,47 @@
 			<array>
 				<dict>
 					<key>label</key>
-					<string>Lacewing</string>
+					<string>lacewing</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Mayfly</string>
+					<string>mayfly</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Cockroach</string>
+					<string>cockroach</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Silverfish</string>
+					<string>silverfish</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Walkingstick</string>
+					<string>walkingstick</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Praying mantid</string>
+					<string>praying mantid</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Termite</string>
+					<string>termite</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Thrips</string>
+					<string>thrips</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Springtail</string>
+					<string>springtail</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Other insect</string>
+					<string>other insect</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Unknown insect</string>
+					<string>unknown insect</string>
 				</dict>
 			</array>
 			<key>next</key>
@@ -1033,6 +1044,17 @@
 			<key>type</key>
 			<string>Choose1</string>
 		</dict>
+		<key>location</key>
+		<dict>
+			<key>dataField</key>
+			<string>locationDescription</string>
+			<key>next</key>
+			<string>notes</string>
+			<key>title</key>
+			<string>Enter Location</string>
+			<key>type</key>
+			<string>Location</string>
+		</dict>
 		<key>mammal-type</key>
 		<dict>
 			<key>dataField</key>
@@ -1041,27 +1063,27 @@
 			<array>
 				<dict>
 					<key>label</key>
-					<string>Human</string>
+					<string>human</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>E. fox squirrel</string>
+					<string>eastern fox squirrel</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Domestic dog</string>
+					<string>domestic dog</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Domestic cat</string>
+					<string>domestic cat</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>House mouse</string>
+					<string>house mouse</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>White-footed mouse</string>
+					<string>white-footed mouse</string>
 				</dict>
 				<dict>
 					<key>label</key>
@@ -1069,31 +1091,31 @@
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Unknown rodent</string>
+					<string>unknown rodent</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Raccoon</string>
+					<string>raccoon</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Red squirrel</string>
+					<string>red squirrel</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>E. chipmunk</string>
+					<string>eastern chipmunk</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>E. cottontail rabbit</string>
+					<string>eastern cottontail rabbit</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Striped skunk</string>
+					<string>striped skunk</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Woodchuck</string>
+					<string>woodchuck</string>
 				</dict>
 				<dict>
 					<key>label</key>
@@ -1101,35 +1123,35 @@
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Meadow vole</string>
+					<string>meadow vole</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Least weasel</string>
+					<string>least weasel</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Big brown bat</string>
+					<string>big brown bat</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Unknown bat</string>
+					<string>unknown bat</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>White-tailed deer</string>
+					<string>white-tailed deer</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Coyote</string>
+					<string>coyote</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Other mammal</string>
+					<string>other mammal</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Unknown mammal</string>
+					<string>unknown mammal</string>
 				</dict>
 			</array>
 			<key>next</key>
@@ -1147,55 +1169,55 @@
 			<array>
 				<dict>
 					<key>label</key>
-					<string>Ribbed dome snail</string>
+					<string>ribbed dome snail</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Amber snail</string>
+					<string>amber snail</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Toothed pupa snail</string>
+					<string>toothed pupa snail</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Flat disc snail</string>
+					<string>flat disc snail</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Pond snail</string>
+					<string>pond snail</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Smooth grass snail</string>
+					<string>smooth grass snail</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Glossy glass snail</string>
+					<string>glossy glass snail</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Striped slug</string>
+					<string>striped slug</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Gray field slug</string>
+					<string>gray field slug</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Other snail</string>
+					<string>other snail</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Unknown snail</string>
+					<string>unknown snail</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Other slug</string>
+					<string>other slug</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Unknown slug</string>
+					<string>unknown slug</string>
 				</dict>
 			</array>
 			<key>next</key>
@@ -1213,19 +1235,19 @@
 			<array>
 				<dict>
 					<key>label</key>
-					<string>Millipedes</string>
+					<string>millipedes</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Centipedes</string>
+					<string>centipedes</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Other myriapod</string>
+					<string>other myriapod</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Unknown myriapod</string>
+					<string>unknown myriapod</string>
 				</dict>
 			</array>
 			<key>next</key>
@@ -1267,31 +1289,31 @@
 			<array>
 				<dict>
 					<key>label</key>
-					<string>Grass</string>
+					<string>grass</string>
 					<key>next</key>
 					<string>grass-howmuch</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Weeds, herbs, or other small plants</string>
+					<string>weeds, herbs, or other small plants</string>
 					<key>next</key>
 					<string>plant-howmany</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Vine</string>
+					<string>vine</string>
 					<key>next</key>
 					<string>plant-howmany</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Shrub or Bush</string>
+					<string>shrub or bush</string>
 					<key>next</key>
 					<string>plant-howmany</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Tree</string>
+					<string>tree</string>
 					<key>next</key>
 					<string>plant-howmany</string>
 				</dict>
@@ -1309,19 +1331,19 @@
 			<array>
 				<dict>
 					<key>label</key>
-					<string>Five-lined skink</string>
+					<string>five-lined skink</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Other lizard</string>
+					<string>other lizard</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Unknown lizard</string>
+					<string>unknown lizard</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>E. garter snake</string>
+					<string>eastern garter snake</string>
 				</dict>
 				<dict>
 					<key>label</key>
@@ -1329,55 +1351,55 @@
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Brown snake</string>
+					<string>brown snake</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>N. water snake</string>
+					<string>northern water snake</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>E. massasauga rattlesnake</string>
+					<string>eastern massasauga rattlesnake</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Northern red-bellied snake</string>
+					<string>northern red-bellied snake</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Smooth green snake</string>
+					<string>smooth green snake</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>E. hognose snake</string>
+					<string>eastern hognose snake</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Other snake</string>
+					<string>other snake</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Unknown snake</string>
+					<string>unknown snake</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Painted turtle</string>
+					<string>painted turtle</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Snapping turtle</string>
+					<string>snapping turtle</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Other turtle</string>
+					<string>other turtle</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Unknown turtle</string>
+					<string>unknown turtle</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Unknown reptile</string>
+					<string>unknown reptile</string>
 				</dict>
 			</array>
 			<key>next</key>
@@ -1425,7 +1447,7 @@
 					<key>label</key>
 					<string>Producer</string>
 					<key>next</key>
-					<string>notes</string>
+					<string>location</string>
 				</dict>
 				<dict>
 					<key>label</key>
@@ -1507,7 +1529,7 @@
 				</dict>
 			</array>
 			<key>next</key>
-			<string>notes</string>
+			<string>location</string>
 			<key>title</key>
 			<string>What is it doing?</string>
 			<key>type</key>
@@ -1525,27 +1547,27 @@
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Living Animal</string>
+					<string>Living animal</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Living Leaves</string>
+					<string>Living leaves</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Other Live Plant Parts</string>
+					<string>Other live plant parts</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Dead Animal</string>
+					<string>Dead animal</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Dead Leaves</string>
+					<string>Dead leaves</string>
 				</dict>
 				<dict>
 					<key>label</key>
-					<string>Other Dead Plant Parts</string>
+					<string>Other dead plant parts</string>
 				</dict>
 				<dict>
 					<key>label</key>
@@ -1553,7 +1575,7 @@
 				</dict>
 			</array>
 			<key>next</key>
-			<string>notes</string>
+			<string>location</string>
 			<key>title</key>
 			<string>What is it eating?</string>
 			<key>type</key>

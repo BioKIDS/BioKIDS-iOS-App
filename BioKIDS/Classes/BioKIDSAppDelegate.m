@@ -2,7 +2,7 @@
   BioKIDSAppDelegate.m
   Created 8/8/11.
 
-  Copyright (c) 2011 The Regents of the University of Michigan
+  Copyright (c) 2011-2013 The Regents of the University of Michigan
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
@@ -25,7 +25,10 @@
 */
 
 #import "BioKIDSAppDelegate.h"
+#import "BioKIDSUtil.h"
+#import "Constants.h"
 #import "HomeVC.h"
+
 
 // Declare private methods.
 @interface BioKIDSAppDelegate()
@@ -68,9 +71,46 @@
 
 		self.rootNavController.navigationBarHidden = YES;
 
-		[self.window addSubview:[self.rootNavController view]];
+		self.window.rootViewController = self.rootNavController;
 
+		// For iOS 7 and newer, set navigation bar appearance.
+		UINavigationBar *navBar = self.rootNavController.navigationBar;
+		if ([navBar respondsToSelector:@selector(setBarTintColor:)])
+		{
+			BioKIDSUtil *bku = [BioKIDSUtil sharedBioKIDSUtil];
+			UIColor *bgColor = [bku appBackgroundColor];
+			UIColor *btnAndTextColor = [bku titleTextColor];
+			[navBar setBarTintColor:bgColor];
+			navBar.tintColor = btnAndTextColor;
+
+			NSDictionary *textAttrs = @{UITextAttributeTextColor: btnAndTextColor};
+			navBar.titleTextAttributes = textAttrs;
+
+			// Set tintColor for some controls.
+			[[UIButton appearance] setTintColor:btnAndTextColor];
+			[[UISegmentedControl appearance] setTintColor:btnAndTextColor];
+			UIColor *swColor = bgColor;
+			[[UISwitch appearance] setTintColor:swColor];
+			[[UISwitch appearance] setOnTintColor:swColor];
+		}
+
+		// Show our views to the world.
 		[self.window makeKeyAndVisible];
+		
+		// If first launch, prompt for classroom vs personal use.
+		NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+		NSString *version = [ud stringForKey:kLastVersionKey];
+		if (0 == [version length])
+		{
+			NSString *prompt = NSLocalizedString(@"ClassroomUsePrompt", nil);
+			NSString *classroom = NSLocalizedString(@"ClassroomUseTitle", nil);
+			NSString *personal = NSLocalizedString(@"PersonalUseTitle", nil);
+			UIAlertView *av = [[UIAlertView alloc] initWithTitle:@""
+							   message:prompt delegate:self cancelButtonTitle:nil
+							   otherButtonTitles:classroom, personal, nil];
+			[av show];
+			[av release];
+		}
 	}
 
 	return YES;
@@ -206,17 +246,39 @@
 }
 
 
+#pragma mark UIAlertViewDelegate Methods
+- (void)alertView:(UIAlertView *)aAlertView
+								clickedButtonAtIndex:(NSInteger)aButtonIndex
+{
+	BOOL isClassroomUse = (0 == aButtonIndex);
+	NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+	[ud setBool:isClassroomUse forKey:kClassroomUseKey];
+
+	NSString *appVersion = [[[NSBundle mainBundle] infoDictionary]
+							objectForKey:@"CFBundleShortVersionString"];
+	[ud setObject:appVersion forKey:kLastVersionKey];
+	[ud synchronize];
+}
+
+
 #pragma mark Private Methods
 - (BOOL)createPersistentStoreCoordinator:(BOOL)aExitOnError
 {
 	NSURL *storeURL = [self getDataStoreURL];
 
+	// TODO: test data model 1 to 2 migration
+
 	NSError *error = nil;
 	__persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc]
 						initWithManagedObjectModel:[self managedObjectModel]];
+	NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
+							 [NSNumber numberWithBool:YES],
+								NSMigratePersistentStoresAutomaticallyOption,
+	 						 [NSNumber numberWithBool:YES],
+								NSInferMappingModelAutomaticallyOption, nil];
 	if (nil != [__persistentStoreCoordinator
 				addPersistentStoreWithType:NSSQLiteStoreType
-				configuration:nil URL:storeURL options:nil error:&error])
+				configuration:nil URL:storeURL options:options error:&error])
 	{
 		// Perform any manual migration steps here, if necessary.
 		return YES;		// Persistent store has been initialized successfully.
@@ -228,13 +290,6 @@
 	 *   The schema for the persistent store is incompatible with the
 	 *       current managed object model.
 	 * Check the error message to determine what the actual problem was.
-	 *
-	 * To performing automatic lightweight migration pass the following
-	 * dictionary as the options parameter:
-	 * [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES],
-	 *					NSMigratePersistentStoresAutomaticallyOption,
-	 *					[NSNumber numberWithBool:YES],
-	 *					NSInferMappingModelAutomaticallyOption, nil];
 	 */
 	NSLog(@"Unresolved Core Data error %@, %@", error, [error userInfo]);
 

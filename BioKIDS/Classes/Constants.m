@@ -2,7 +2,7 @@
   Constants.m
   Created 8/12/11.
 
-  Copyright (c) 2011 The Regents of the University of Michigan
+  Copyright (c) 2011-2013 The Regents of the University of Michigan
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
@@ -28,14 +28,18 @@
 const NSTimeInterval kNetworkPOSTTimeout = 120.0;	// Two minutes (but iOS enforces 4 minute minimum for POSTs).
 
 // Notifications.
-NSString *const kNotificationUploadComplete = @"BioKIDS_UploadComplete";
+NSString * const kNotificationUploadComplete = @"BioKIDS_UploadComplete";
+NSString * const kNotificationClassroomUseChanged = @"BioKIDS_ClassroomUseChanged";
 
 // Preference keys and values:
+NSString * const kLastVersionKey = @"LastVersion";
+NSString * const kClassroomUseKey = @"ClassroomUse";
 NSString * const kBioKIDSIDKey = @"BioKIDSID";
 NSString * const kTrackerKey = @"Tracker";
 NSString * const kZoneKey = @"Zone";
 NSString * const kServerURLKey = @"ServerURL";
 NSString * const kUserNameKey = @"ServerUserName";
+NSString * const kLastLocationDescriptionKey = @"LastLocationDescription";
 
 // Keychain service names:
 NSString * const kBioKIDSServiceName = @"BioKIDS";
@@ -50,6 +54,5 @@ NSString * const kHowExactExact = @"Exact count";
 NSString * const kHowExactEstim = @"Estimated count";
 
 // CSV column header.
-NSString * const kCSVColumns = @"guid,date,time,group_code,location,name,how_observed,what_observed,animal_group,animal,where_observed,behavior_observed,what_eating,how_many,how_exact,plant_group,how_much_grass,energy_role,consumer_type,notes";
-
+NSString * const kCSVColumns = @"guid,date,time,group_code,location,name,how_observed,what_observed,animal_group,animal,where_observed,behavior_observed,what_eating,how_many,how_exact,plant_group,how_much_grass,energy_role,consumer_type,locationDescription,latitude,longitude,locationAccuracy,notes,photo";
 

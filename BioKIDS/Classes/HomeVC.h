@@ -30,6 +30,7 @@
 @interface HomeVC : UIViewController <UIAlertViewDelegate>
 {
 	UIImageView *mBGImageView;
+	UIImageView *mKidsImageView;
 	UIButton *mObserveButton;
 	UILabel *mBioKIDSIDLabel;
 	UILabel *mTrackerLabel;
@@ -37,6 +38,7 @@
 }
 
 @property (nonatomic, retain) IBOutlet UIImageView *mBGImageView;
+@property (nonatomic, retain) IBOutlet UIImageView *mKidsImageView;
 @property (nonatomic, retain) IBOutlet UIButton *mObserveButton;
 @property (nonatomic, retain) IBOutlet UILabel *mBioKIDSIDLabel;
 @property (nonatomic, retain) IBOutlet UILabel *mTrackerLabel;

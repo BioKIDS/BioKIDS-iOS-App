@@ -2,7 +2,7 @@
   ServerVC.h
   Created 8/22/11.
 
-  Copyright (c) 2011 The Regents of the University of Michigan
+  Copyright (c) 2011-2013 The Regents of the University of Michigan
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
@@ -25,12 +25,15 @@
 */
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MFMailComposeViewController.h>
 #import "BioKIDSUtil.h"
 
 @interface ServerVC : UIViewController<UITextFieldDelegate,
-										UIActionSheetDelegate>
+										UIActionSheetDelegate,
+										MFMailComposeViewControllerDelegate>
 {
 	UILabel *mObsLabel;
+	UIButton *mEmailBtn;
 	UIButton *mSaveBtn;
 	UIButton *mSettingsBtn;
 	UIButton *mDeleteAllBtn;
@@ -42,6 +45,7 @@
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *mObsLabel;
+@property (nonatomic, retain) IBOutlet UIButton *mEmailBtn;
 @property (nonatomic, retain) IBOutlet UIButton *mSaveBtn;
 @property (nonatomic, retain) IBOutlet UIButton *mSettingsBtn;
 @property (nonatomic, retain) IBOutlet UIButton *mDeleteAllBtn;
@@ -52,6 +56,7 @@
 @property (nonatomic, assign) BOOL mLastSaveSucceeded;
 
 // Declare public methods.
+- (IBAction) onSendEmail:(id)aSender;
 - (IBAction) onSavePress:(id)aSender;
 - (IBAction) onSettingsPress:(id)aSender;
 - (IBAction) onDeleteAllPress:(id)aSender;

@@ -2,7 +2,7 @@
   SeqCountVC.m
   Created 8/9/11.
 
-  Copyright (c) 2011 The Regents of the University of Michigan
+  Copyright (c) 2011-2013 The Regents of the University of Michigan
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
@@ -41,10 +41,13 @@
 
 // Constants:
 const NSInteger kCountContainerViewTag = 100;
-const CGFloat kCountContainerPortraitY = 30.0;
-const CGFloat kCountContainerLandscapeY = 10.0;
-const CGFloat kNextBtnPortraitY = 110.0;
-const CGFloat kNextBtnLandscapeY = 43.0;
+const CGFloat kCountContainerPortraitY = 94.0;
+const CGFloat kCountContainerLandscapeY = 62.0;
+const CGFloat kNextBtnPortraitY = 174.0;
+const CGFloat kNextBtnLandscapeY = 95.0;
+
+static const CGFloat kIOS6BarHeightPortrait = 64.0;
+static const CGFloat kIOS6BarHeightLandscape = 52.0;
 
 
 -(id)initWithScreen:(NSDictionary *)aScreen
@@ -109,6 +112,7 @@ const CGFloat kNextBtnLandscapeY = 43.0;
 	[super viewDidLoad];
 
 	BioKIDSUtil *bku = [BioKIDSUtil sharedBioKIDSUtil];
+	self.view.backgroundColor = [bku appBackgroundColor];
 	[bku useBackButtonLabel:self];
 	NSString *title = [self.mScreenDict objectForKey:@"title"];
 	[bku configureNavTitle:title forVC:self];
@@ -215,19 +219,30 @@ const CGFloat kNextBtnLandscapeY = 43.0;
 {
 	UIInterfaceOrientation orientation =
 				[[UIApplication sharedApplication] statusBarOrientation];
-	BOOL isLandscape = UIDeviceOrientationIsLandscape(orientation);
+	BOOL isIPad = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
+	BOOL treatAsLandscape = (!isIPad) && UIDeviceOrientationIsLandscape(orientation);
+	CGFloat barHeightAdjustment = 0.0;
+	BioKIDSUtil *bku = [BioKIDSUtil sharedBioKIDSUtil];
+	if (![bku systemVersionIsAtLeast:@"7.0"])
+	{
+		barHeightAdjustment = (treatAsLandscape) ? -kIOS6BarHeightLandscape
+												 : -kIOS6BarHeightPortrait;
+	}
+	
 	
 	UIView *container = [self.view viewWithTag:kCountContainerViewTag];
 	if (container)
 	{
 		CGRect r = container.frame;
-		r.origin.y = (isLandscape) ? kCountContainerLandscapeY
-								   : kCountContainerPortraitY;
+		r.origin.y = (treatAsLandscape) ? kCountContainerLandscapeY
+										: kCountContainerPortraitY;
+		r.origin.y += barHeightAdjustment;
 		container.frame = r;
 	}
 	
 	CGRect r = self.mNextBtn.superview.frame;
-	r.origin.y = (isLandscape) ? kNextBtnLandscapeY : kNextBtnPortraitY;
+	r.origin.y = (treatAsLandscape) ? kNextBtnLandscapeY : kNextBtnPortraitY;
+	r.origin.y += barHeightAdjustment;
 	self.mNextBtn.superview.frame = r;
 }
 @end

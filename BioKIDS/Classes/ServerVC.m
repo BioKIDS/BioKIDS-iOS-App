@@ -2,7 +2,7 @@
   ServerVC.m
   Created 8/22/11.
 
-  Copyright (c) 2011 The Regents of the University of Michigan
+  Copyright (c) 2011-2014 The Regents of the University of Michigan
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
@@ -31,16 +31,18 @@
 
 // Declare Private Methods
 @interface ServerVC()
+- (BOOL)haveEmailSettings;
 - (BOOL)haveServerSettings;
 - (void)resetUpload;
 - (void)newUploadStatus:(BioKIDSUploadStatus)aStatus animate:(BOOL)aAnimate;
 - (void)uploadComplete:(NSNotification *)aNotification;
+- (void)promptToDeleteAll:(NSString *)aPromptString fromButton:(UIButton *)aBtn;
 @end
 
 
 @implementation ServerVC
 
-@synthesize mObsLabel, mSaveBtn, mSettingsBtn, mDeleteAllBtn, mSpinner;
+@synthesize mObsLabel, mEmailBtn, mSaveBtn, mSettingsBtn, mDeleteAllBtn, mSpinner;
 @synthesize mErrorLabel, mUtil, mUnsavedCount, mLastSaveSucceeded;
 
 
@@ -51,7 +53,7 @@
 	{
 		self.mUtil = [BioKIDSUtil sharedBioKIDSUtil];
 	}
-	
+
 	return self;
 }
 
@@ -61,6 +63,7 @@
 	[self.mUtil discardUploadData:NO];
 
 	self.mObsLabel = nil;
+	self.mEmailBtn = nil;
 	self.mSaveBtn = nil;
 	self.mSettingsBtn = nil;
 	self.mDeleteAllBtn = nil;
@@ -86,9 +89,12 @@
 {
 	[super viewDidLoad];
 
-	BioKIDSUtil *bku = [BioKIDSUtil sharedBioKIDSUtil];
-	[bku useBackButtonLabel:self];
-	self.navigationItem.title = NSLocalizedString(@"ServerTitle", nil);
+	self.view.backgroundColor = [self.mUtil appBackgroundColor];
+	[self.mUtil useBackButtonLabel:self];
+	self.navigationItem.title = NSLocalizedString(@"ShareObservationsTitle", nil);
+
+	self.mObsLabel.textColor = [self.mUtil titleTextColor];
+	self.mErrorLabel.textColor = [self.mUtil titleTextColor];
 
 	[[NSNotificationCenter defaultCenter] addObserver:self
 						selector:@selector(uploadComplete:)
@@ -109,6 +115,13 @@
 {
 	[super viewWillAppear:aAnimated];
 
+	// Display/Clear "check your email settings" error message as appropriate.
+	NSString *errMsg = NSLocalizedString(@"NoEmailSettings", nil);
+	if (![self haveEmailSettings])
+		self.mErrorLabel.text = errMsg;
+	else if ([self.mErrorLabel.text isEqualToString:errMsg])
+		self.mErrorLabel.text = nil;
+
 	[self resetUpload];
 }
 
@@ -117,7 +130,7 @@
 {
 	[super viewWillDisappear:aAnimated];
 
-	[[BioKIDSUtil sharedBioKIDSUtil] closePopoversAndAlerts:nil];
+	[self.mUtil closePopoversAndAlerts:nil];
 }
 
 
@@ -150,7 +163,60 @@
 }
 
 
+#pragma mark MFMailComposeViewControllerDelegate Methods
+- (void)mailComposeController:(MFMailComposeViewController *)aController
+          didFinishWithResult:(MFMailComposeResult)aResult
+                        error:(NSError *)aError;
+{
+	if (aResult == MFMailComposeResultFailed)
+	{
+		NSString *msg = aError ? [aError localizedDescription] : @"";
+		NSString *fmt = NSLocalizedString(@"SendEmailErrorFmt", nil);
+		self.mErrorLabel.text = [NSString stringWithFormat:fmt, msg];
+	}
+
+	BOOL wasSentOrSaved = (aResult == MFMailComposeResultSent)
+							|| (aResult == MFMailComposeResultSaved);
+	[self dismissViewControllerAnimated:YES completion:^{
+		if (wasSentOrSaved)
+		{
+			NSString *prompt = NSLocalizedString(@"DeleteAfterEmailPrompt", nil);
+			[self promptToDeleteAll:prompt fromButton:self.mEmailBtn];
+		}
+	}];
+}
+
+
 #pragma mark Other Public Methods
+- (IBAction) onSendEmail:(id)aSender
+{
+	if (![self haveEmailSettings])
+		return;
+
+	MFMailComposeViewController *controller =
+								[[MFMailComposeViewController alloc] init];
+	controller.mailComposeDelegate = self;
+	[controller setSubject:NSLocalizedString(@"EmailSubject", nil)];
+	NSString *s = [self.mUtil csvForObservations];
+//	NSLog(@"CSV data:\n%@", s);
+	NSData *csvData = [s dataUsingEncoding:NSUTF8StringEncoding];
+	[controller addAttachmentData:csvData mimeType:@"text/csv;charset=utf-8"
+						 fileName:@"observations.csv"];
+	NSArray *imagePathArray = [self.mUtil imagePathsForObservations];
+	for (NSString *imgPath in imagePathArray)
+	{
+		NSData *imgData = [NSData dataWithContentsOfFile:imgPath];
+		NSString *imgName = [imgPath lastPathComponent];
+		[controller addAttachmentData:imgData mimeType:@"image/jpeg"
+							 fileName:imgName];
+	}
+
+	if (controller)
+		[self presentViewController:controller animated:YES completion:nil];
+	[controller release];
+}
+
+
 - (IBAction) onSavePress:(id)aSender
 {
 	self.mErrorLabel.text = nil;
@@ -170,16 +236,7 @@
 		prompt = [NSString stringWithFormat:fmt, self.mUnsavedCount];
 	}
 
-	NSString *cancelTitle = NSLocalizedString(@"CancelTitle", nil);
-	NSString *deleteTitle = NSLocalizedString(@"DeleteAllObsTitle", nil);
-	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:prompt
-									delegate:self cancelButtonTitle:cancelTitle
-									destructiveButtonTitle:deleteTitle
-									otherButtonTitles:nil];
-	actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
-	[actionSheet showFromRect:self.mDeleteAllBtn.frame inView:self.view
-					 animated:NO];
-	[actionSheet release];
+	[self promptToDeleteAll:prompt fromButton:self.mDeleteAllBtn];
 }
 
 
@@ -195,12 +252,18 @@
 
 
 #pragma mark Private Methods
+- (BOOL)haveEmailSettings
+{
+	return [MFMailComposeViewController canSendMail];
+}
+
+
 - (BOOL)haveServerSettings
 {
 	NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
 	NSString *url = [ud valueForKey:kServerURLKey];
 	NSString *userName = [ud valueForKey:kUserNameKey];
-	NSString *pwd = [[BioKIDSUtil sharedBioKIDSUtil] retrievePassword];
+	NSString *pwd = [self.mUtil retrievePassword];
 	return ([url length] > 0) && ([userName length] > 0) && ([pwd length] > 0);
 }
 
@@ -215,11 +278,12 @@
 - (void)newUploadStatus:(BioKIDSUploadStatus)aStatus animate:(BOOL)aAnimate
 {
 	NSString *labelText = nil;
-	
+
 	aAnimate = NO;		// TODOFuture: enable fade in/out animation of mObsLabel (enabling causes text to get clobbered).
 
 	if (UploadStatusIdle == aStatus)
 	{
+		self.mEmailBtn.hidden = NO;
 		self.mSaveBtn.hidden = NO;
 		self.mSettingsBtn.hidden = NO;
 		self.mDeleteAllBtn.hidden = NO;
@@ -232,6 +296,7 @@
 				labelText = NSLocalizedString(@"UploadOK", nil);
 			else
 				labelText = NSLocalizedString(@"NoObservationsToUpload", nil);
+			self.mEmailBtn.enabled = NO;
 			self.mSaveBtn.enabled = NO;
 			self.mDeleteAllBtn.enabled = NO;
 		}
@@ -245,12 +310,15 @@
 				labelText = [NSString stringWithFormat:fmt, self.mUnsavedCount];
 			}
 
+			self.mEmailBtn.enabled = [self haveEmailSettings] &&
+										(self.mUnsavedCount != 0);
 			self.mSaveBtn.enabled = [self haveServerSettings];
 			self.mDeleteAllBtn.enabled = YES;
 		}
 	}
 	else
 	{
+		self.mEmailBtn.hidden = YES;
 		self.mSaveBtn.hidden = YES;
 		self.mSettingsBtn.hidden = YES;
 		self.mDeleteAllBtn.hidden = YES;
@@ -300,6 +368,20 @@
 		self.mLastSaveSucceeded = YES;
 
 	[self newUploadStatus:[self.mUtil uploadStatus] animate:YES];
+}
+
+
+- (void) promptToDeleteAll:(NSString *)aPromptString fromButton:(UIButton *)aBtn
+{
+	NSString *cancelTitle = NSLocalizedString(@"CancelTitle", nil);
+	NSString *deleteTitle = NSLocalizedString(@"DeleteAllObsTitle", nil);
+	UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:aPromptString
+									delegate:self cancelButtonTitle:cancelTitle
+									destructiveButtonTitle:deleteTitle
+									otherButtonTitles:nil];
+	as.actionSheetStyle = UIActionSheetStyleDefault;
+	[as showFromRect:aBtn.frame inView:self.view animated:NO];
+	[as release];
 }
 
 @end

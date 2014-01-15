@@ -2,7 +2,7 @@
   SettingsVC.h
   Created 8/11/11.
 
-  Copyright (c) 2011 The Regents of the University of Michigan
+  Copyright (c) 2011-2013 The Regents of the University of Michigan
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
@@ -26,12 +26,15 @@
 
 #import <UIKit/UIKit.h>
 #import "BioKIDSIDCell.h"
+#import "ClassroomToggleCell.h"
 
 @interface SettingsVC : UITableViewController
 {
-    BioKIDSIDCell *mIDCell;
+	ClassroomToggleCell	*mClassroomToggleCell;
+	BioKIDSIDCell		*mIDCell;
 }
 
+@property (nonatomic, retain) IBOutlet ClassroomToggleCell *mClassroomToggleCell;
 @property (nonatomic, retain) IBOutlet BioKIDSIDCell *mIDCell;
 
 @end

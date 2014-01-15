@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E208913E1857A246009E03D0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E208913D1857A246009E03D0 /* CoreLocation.framework */; };
+		E20891411857AB30009E03D0 /* BioKIDSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E20891401857AB30009E03D0 /* BioKIDSLocationManager.m */; };
 		E20F088B13F07AAD008BA7B9 /* BioKIDSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E20F088813F07AAD008BA7B9 /* BioKIDSAppDelegate.m */; };
 		E20F088C13F07AAD008BA7B9 /* HomeVC.xib in Sources */ = {isa = PBXBuildFile; fileRef = E20F088A13F07AAD008BA7B9 /* HomeVC.xib */; };
-		E20F08AD13F0819D008BA7B9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E20F08AC13F0819D008BA7B9 /* Icon.png */; };
 		E20F08C213F08A76008BA7B9 /* InfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E20F08C113F08A76008BA7B9 /* InfoVC.m */; };
 		E20F08C413F08B11008BA7B9 /* InfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E20F08C313F08B11008BA7B9 /* InfoVC.xib */; };
 		E20F08C613F08E10008BA7B9 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E20F08C513F08E10008BA7B9 /* logo.png */; };
@@ -30,13 +31,17 @@
 		E222114B13F1A77800560592 /* SeqCountVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E222114A13F1A77800560592 /* SeqCountVC.xib */; };
 		E222115913F1B2B900560592 /* SeqTextVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E222115713F1B2B900560592 /* SeqTextVC.m */; };
 		E222115C13F1B31300560592 /* SeqTextVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E222115B13F1B31300560592 /* SeqTextVC.xib */; };
+		E229727F185B702D00327478 /* SeqLocationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E229727E185B702D00327478 /* SeqLocationVC.xib */; };
+		E2297282185B709400327478 /* SeqLocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E2297281185B709400327478 /* SeqLocationVC.m */; };
 		E22FB6AF143384670067B9EE /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = E22FB6AD143384670067B9EE /* Settings.png */; };
 		E22FB6B0143384670067B9EE /* Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E22FB6AE143384670067B9EE /* Settings@2x.png */; };
-		E22FB6B31433A3A00067B9EE /* observe-highlight-iphone-portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = E22FB6B21433A3A00067B9EE /* observe-highlight-iphone-portrait.png */; };
+		E22FB6B31433A3A00067B9EE /* observe-highlight-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = E22FB6B21433A3A00067B9EE /* observe-highlight-iphone.png */; };
 		E238866013F06B0800ABA3B6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E238866213F06B0800ABA3B6 /* Localizable.strings */; };
 		E238867913F0766D00ABA3B6 /* SaveToServer.png in Resources */ = {isa = PBXBuildFile; fileRef = E238867813F0766D00ABA3B6 /* SaveToServer.png */; };
 		E238867E13F077BF00ABA3B6 /* About.png in Resources */ = {isa = PBXBuildFile; fileRef = E238867B13F077BF00ABA3B6 /* About.png */; };
 		E238867F13F077BF00ABA3B6 /* Help.png in Resources */ = {isa = PBXBuildFile; fileRef = E238867C13F077BF00ABA3B6 /* Help.png */; };
+		E238F8FD180FF27800BCDEB1 /* SeqPhotoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E238F8FB180FF27800BCDEB1 /* SeqPhotoVC.m */; };
+		E238F8FE180FF27800BCDEB1 /* SeqPhotoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E238F8FC180FF27800BCDEB1 /* SeqPhotoVC.xib */; };
 		E23D07B813FD51C000213368 /* tracker-alem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E23D07AA13FD51C000213368 /* tracker-alem@2x.png */; };
 		E23D07B913FD51C000213368 /* tracker-aren.png in Resources */ = {isa = PBXBuildFile; fileRef = E23D07AB13FD51C000213368 /* tracker-aren.png */; };
 		E23D07BA13FD51C000213368 /* tracker-aren@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E23D07AC13FD51C000213368 /* tracker-aren@2x.png */; };
@@ -57,6 +62,10 @@
 		E23D07D313FD591B00213368 /* Help@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E23D07CF13FD591B00213368 /* Help@2x.png */; };
 		E23D07D513FD591B00213368 /* SaveToServer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E23D07D113FD591B00213368 /* SaveToServer@2x.png */; };
 		E23D07D813FD598900213368 /* About@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E23D07D713FD598900213368 /* About@2x.png */; };
+		E247AF181836C86A00165919 /* home-kids-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E247AF171836C86A00165919 /* home-kids-ipad.png */; };
+		E247AF1C1836CCC000165919 /* home-kids-ipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E247AF191836CCC000165919 /* home-kids-ipad@2x.png */; };
+		E247AF1D1836CCC000165919 /* home-kids-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = E247AF1A1836CCC000165919 /* home-kids-iphone.png */; };
+		E247AF1E1836CCC000165919 /* home-kids-iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E247AF1B1836CCC000165919 /* home-kids-iphone@2x.png */; };
 		E26A9BCE13F16DFA0074C87A /* SeqChoose1VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E26A9BCD13F16DFA0074C87A /* SeqChoose1VC.xib */; };
 		E26A9BD213F16E100074C87A /* SeqChoose1VC.m in Sources */ = {isa = PBXBuildFile; fileRef = E26A9BD113F16E100074C87A /* SeqChoose1VC.m */; };
 		E26A9BDF13F1710D0074C87A /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = E26A9BDD13F1710D0074C87A /* checked.png */; };
@@ -76,6 +85,7 @@
 		E276CD7113F46E4F00B9BF18 /* SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E276CD7013F46E4F00B9BF18 /* SettingsVC.xib */; };
 		E276CD7313F4738B00B9BF18 /* BioKIDSIDCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E276CD7213F4738B00B9BF18 /* BioKIDSIDCell.xib */; };
 		E276CD7613F473A000B9BF18 /* BioKIDSIDCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E276CD7513F473A000B9BF18 /* BioKIDSIDCell.m */; };
+		E279CFFE1818AD9800440BDB /* BioKIDS1_2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = E279CFFD1818AD9800440BDB /* BioKIDS1_2.xcmappingmodel */; };
 		E286F2A813F96B0E00BF8358 /* Observation.m in Sources */ = {isa = PBXBuildFile; fileRef = E286F2A713F96B0E00BF8358 /* Observation.m */; };
 		E28EC6DC13F05B59001917B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E28EC6DB13F05B59001917B5 /* UIKit.framework */; };
 		E28EC6DE13F05B59001917B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E28EC6DD13F05B59001917B5 /* Foundation.framework */; };
@@ -167,34 +177,32 @@
 		E2B09BCE13FEB7E900B452B4 /* seq-track@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B09BC613FEB7E900B452B4 /* seq-track@2x.png */; };
 		E2B7CB83140584DB0030FE6E /* seq-grass-morethanhalf.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B7CB81140584DA0030FE6E /* seq-grass-morethanhalf.png */; };
 		E2B7CB84140584DB0030FE6E /* seq-grass-morethanhalf@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B7CB82140584DA0030FE6E /* seq-grass-morethanhalf@2x.png */; };
+		E2BD1C301832DC6600A6BEC7 /* ClassroomToggleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2BD1C2F1832DC6600A6BEC7 /* ClassroomToggleCell.xib */; };
+		E2BD1C331832FD1100A6BEC7 /* ClassroomToggleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2BD1C321832FD1100A6BEC7 /* ClassroomToggleCell.m */; };
+		E2C5D1D1185624AB005428BA /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C5D1D0185624AB005428BA /* MessageUI.framework */; };
 		E2C84C2E14028B7B00CBA768 /* ServerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C84C2C14028B7B00CBA768 /* ServerVC.m */; };
 		E2C84C2F14028B7B00CBA768 /* ServerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2C84C2D14028B7B00CBA768 /* ServerVC.xib */; };
-		E2C84C931404390100CBA768 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = E2C84C8E1404390100CBA768 /* Icon-72.png */; };
-		E2C84C941404390100CBA768 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = E2C84C8F1404390100CBA768 /* Icon-Small-50.png */; };
-		E2C84C951404390100CBA768 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = E2C84C901404390100CBA768 /* Icon-Small.png */; };
-		E2C84C961404390100CBA768 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2C84C911404390100CBA768 /* Icon-Small@2x.png */; };
-		E2C84C971404390100CBA768 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2C84C921404390100CBA768 /* Icon@2x.png */; };
-		E2C84C9A1404400E00CBA768 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E2C84C981404400E00CBA768 /* Default.png */; };
-		E2C84C9B1404400E00CBA768 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2C84C991404400E00CBA768 /* Default@2x.png */; };
-		E2C84C9E1404423800CBA768 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = E2C84C9C1404423800CBA768 /* Default-Landscape.png */; };
-		E2C84C9F1404423800CBA768 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = E2C84C9D1404423800CBA768 /* Default-Portrait.png */; };
+		E2C9E80C18843CAF004A30E5 /* photoPlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = E2C9E80B18843CAF004A30E5 /* photoPlaceholder.png */; };
+		E2C9E80E18844114004A30E5 /* photoPlaceholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2C9E80D18844114004A30E5 /* photoPlaceholder@2x.png */; };
+		E2E047C9183AC10900DF1491 /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E047C8183AC10900DF1491 /* HomeView.m */; };
 		E2F4EE1013F70E9E00706787 /* tracker-sanjo.png in Resources */ = {isa = PBXBuildFile; fileRef = E2F4EE0713F70E9E00706787 /* tracker-sanjo.png */; };
 		E2F4EE1313F70F2700706787 /* tracker-alem.png in Resources */ = {isa = PBXBuildFile; fileRef = E2F4EE1213F70F2700706787 /* tracker-alem.png */; };
+		E2F65A92185F60E100F04A1F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2F65A91185F60E100F04A1F /* Images.xcassets */; };
 		E2F7E2B113F0C9B7001C7A6C /* SeqChooseNVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F7E2B013F0C9B7001C7A6C /* SeqChooseNVC.m */; };
 		E2F7E2B313F0C9C1001C7A6C /* SeqChooseNVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2F7E2B213F0C9C1001C7A6C /* SeqChooseNVC.xib */; };
-		E2FCC6021433B5E000DBE056 /* observe-highlight-iphone-landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FCC6011433B5E000DBE056 /* observe-highlight-iphone-landscape.png */; };
-		E2FCC6061433B7A400DBE056 /* observe-highlight-ipad-landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FCC6041433B7A400DBE056 /* observe-highlight-ipad-landscape.png */; };
-		E2FCC6071433B7A400DBE056 /* observe-highlight-ipad-portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FCC6051433B7A400DBE056 /* observe-highlight-ipad-portrait.png */; };
+		E2FCC6071433B7A400DBE056 /* observe-highlight-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FCC6051433B7A400DBE056 /* observe-highlight-ipad.png */; };
 		E2FCC6101433F5D600DBE056 /* ServerSettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FCC60E1433F5D600DBE056 /* ServerSettingsVC.m */; };
 		E2FCC6111433F5D600DBE056 /* ServerSettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2FCC60F1433F5D600DBE056 /* ServerSettingsVC.xib */; };
 		E2FCC6271434C14F00DBE056 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2FCC6261434C14E00DBE056 /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E208913D1857A246009E03D0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E208913F1857AB30009E03D0 /* BioKIDSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BioKIDSLocationManager.h; path = Classes/BioKIDSLocationManager.h; sourceTree = "<group>"; };
+		E20891401857AB30009E03D0 /* BioKIDSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BioKIDSLocationManager.m; path = Classes/BioKIDSLocationManager.m; sourceTree = "<group>"; };
 		E20F088713F07AAD008BA7B9 /* BioKIDSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BioKIDSAppDelegate.h; path = Classes/BioKIDSAppDelegate.h; sourceTree = "<group>"; };
 		E20F088813F07AAD008BA7B9 /* BioKIDSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BioKIDSAppDelegate.m; path = Classes/BioKIDSAppDelegate.m; sourceTree = "<group>"; };
 		E20F088A13F07AAD008BA7B9 /* HomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeVC.xib; path = BioKIDS/Resources/XIBs/HomeVC.xib; sourceTree = "<group>"; };
-		E20F08AC13F0819D008BA7B9 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = BioKIDS/Resources/Images/Icon.png; sourceTree = "<group>"; };
 		E20F08C013F08A76008BA7B9 /* InfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoVC.h; path = Classes/InfoVC.h; sourceTree = "<group>"; };
 		E20F08C113F08A76008BA7B9 /* InfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoVC.m; path = Classes/InfoVC.m; sourceTree = "<group>"; };
 		E20F08C313F08B11008BA7B9 /* InfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InfoVC.xib; path = BioKIDS/Resources/XIBs/InfoVC.xib; sourceTree = "<group>"; };
@@ -218,13 +226,19 @@
 		E222115613F1B2B900560592 /* SeqTextVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeqTextVC.h; path = Classes/SeqTextVC.h; sourceTree = "<group>"; };
 		E222115713F1B2B900560592 /* SeqTextVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeqTextVC.m; path = Classes/SeqTextVC.m; sourceTree = "<group>"; };
 		E222115B13F1B31300560592 /* SeqTextVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SeqTextVC.xib; path = BioKIDS/Resources/XIBs/SeqTextVC.xib; sourceTree = "<group>"; };
+		E229727E185B702D00327478 /* SeqLocationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SeqLocationVC.xib; path = BioKIDS/Resources/XIBs/SeqLocationVC.xib; sourceTree = "<group>"; };
+		E2297280185B709400327478 /* SeqLocationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeqLocationVC.h; path = Classes/SeqLocationVC.h; sourceTree = "<group>"; };
+		E2297281185B709400327478 /* SeqLocationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeqLocationVC.m; path = Classes/SeqLocationVC.m; sourceTree = "<group>"; };
 		E22FB6AD143384670067B9EE /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Settings.png; path = BioKIDS/Resources/Images/MainMenu/Settings.png; sourceTree = "<group>"; };
 		E22FB6AE143384670067B9EE /* Settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Settings@2x.png"; path = "BioKIDS/Resources/Images/MainMenu/Settings@2x.png"; sourceTree = "<group>"; };
-		E22FB6B21433A3A00067B9EE /* observe-highlight-iphone-portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "observe-highlight-iphone-portrait.png"; path = "BioKIDS/Resources/Images/MainMenu/observe-highlight-iphone-portrait.png"; sourceTree = "<group>"; };
+		E22FB6B21433A3A00067B9EE /* observe-highlight-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "observe-highlight-iphone.png"; path = "BioKIDS/Resources/Images/MainMenu/observe-highlight-iphone.png"; sourceTree = "<group>"; };
 		E238866113F06B0800ABA3B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E238867813F0766D00ABA3B6 /* SaveToServer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SaveToServer.png; path = BioKIDS/Resources/Images/MainMenu/SaveToServer.png; sourceTree = "<group>"; };
 		E238867B13F077BF00ABA3B6 /* About.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = About.png; path = BioKIDS/Resources/Images/MainMenu/About.png; sourceTree = "<group>"; };
 		E238867C13F077BF00ABA3B6 /* Help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Help.png; path = BioKIDS/Resources/Images/MainMenu/Help.png; sourceTree = "<group>"; };
+		E238F8FA180FF27800BCDEB1 /* SeqPhotoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeqPhotoVC.h; path = Classes/SeqPhotoVC.h; sourceTree = "<group>"; };
+		E238F8FB180FF27800BCDEB1 /* SeqPhotoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeqPhotoVC.m; path = Classes/SeqPhotoVC.m; sourceTree = "<group>"; };
+		E238F8FC180FF27800BCDEB1 /* SeqPhotoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SeqPhotoVC.xib; path = BioKIDS/Resources/XIBs/SeqPhotoVC.xib; sourceTree = "<group>"; };
 		E23D07AA13FD51C000213368 /* tracker-alem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tracker-alem@2x.png"; path = "BioKIDS/Resources/Images/Trackers/tracker-alem@2x.png"; sourceTree = "<group>"; };
 		E23D07AB13FD51C000213368 /* tracker-aren.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tracker-aren.png"; path = "BioKIDS/Resources/Images/Trackers/tracker-aren.png"; sourceTree = "<group>"; };
 		E23D07AC13FD51C000213368 /* tracker-aren@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tracker-aren@2x.png"; path = "BioKIDS/Resources/Images/Trackers/tracker-aren@2x.png"; sourceTree = "<group>"; };
@@ -245,6 +259,10 @@
 		E23D07CF13FD591B00213368 /* Help@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Help@2x.png"; path = "BioKIDS/Resources/Images/MainMenu/Help@2x.png"; sourceTree = "<group>"; };
 		E23D07D113FD591B00213368 /* SaveToServer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SaveToServer@2x.png"; path = "BioKIDS/Resources/Images/MainMenu/SaveToServer@2x.png"; sourceTree = "<group>"; };
 		E23D07D713FD598900213368 /* About@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "About@2x.png"; path = "BioKIDS/Resources/Images/MainMenu/About@2x.png"; sourceTree = "<group>"; };
+		E247AF171836C86A00165919 /* home-kids-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home-kids-ipad.png"; path = "BioKIDS/Resources/Images/MainMenu/home-kids-ipad.png"; sourceTree = "<group>"; };
+		E247AF191836CCC000165919 /* home-kids-ipad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home-kids-ipad@2x.png"; path = "BioKIDS/Resources/Images/MainMenu/home-kids-ipad@2x.png"; sourceTree = "<group>"; };
+		E247AF1A1836CCC000165919 /* home-kids-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home-kids-iphone.png"; path = "BioKIDS/Resources/Images/MainMenu/home-kids-iphone.png"; sourceTree = "<group>"; };
+		E247AF1B1836CCC000165919 /* home-kids-iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home-kids-iphone@2x.png"; path = "BioKIDS/Resources/Images/MainMenu/home-kids-iphone@2x.png"; sourceTree = "<group>"; };
 		E26A9BCD13F16DFA0074C87A /* SeqChoose1VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SeqChoose1VC.xib; path = BioKIDS/Resources/XIBs/SeqChoose1VC.xib; sourceTree = "<group>"; };
 		E26A9BD013F16E100074C87A /* SeqChoose1VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeqChoose1VC.h; path = Classes/SeqChoose1VC.h; sourceTree = "<group>"; };
 		E26A9BD113F16E100074C87A /* SeqChoose1VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeqChoose1VC.m; path = Classes/SeqChoose1VC.m; sourceTree = "<group>"; };
@@ -271,6 +289,8 @@
 		E276CD7213F4738B00B9BF18 /* BioKIDSIDCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BioKIDSIDCell.xib; path = BioKIDS/Resources/XIBs/BioKIDSIDCell.xib; sourceTree = "<group>"; };
 		E276CD7413F473A000B9BF18 /* BioKIDSIDCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BioKIDSIDCell.h; path = Classes/BioKIDSIDCell.h; sourceTree = "<group>"; };
 		E276CD7513F473A000B9BF18 /* BioKIDSIDCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BioKIDSIDCell.m; path = Classes/BioKIDSIDCell.m; sourceTree = "<group>"; };
+		E279CFFA1818A88B00440BDB /* BioKIDS2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BioKIDS2.xcdatamodel; sourceTree = "<group>"; };
+		E279CFFD1818AD9800440BDB /* BioKIDS1_2.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; name = BioKIDS1_2.xcmappingmodel; path = BioKIDS/BioKIDS.mappingmodels/BioKIDS1_2.xcmappingmodel; sourceTree = "<group>"; };
 		E286F2A613F96B0E00BF8358 /* Observation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Observation.h; path = Classes/Observation.h; sourceTree = "<group>"; };
 		E286F2A713F96B0E00BF8358 /* Observation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Observation.m; path = Classes/Observation.m; sourceTree = "<group>"; };
 		E28EC6D713F05B59001917B5 /* BioKIDS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BioKIDS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -370,26 +390,24 @@
 		E2B09BC613FEB7E900B452B4 /* seq-track@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "seq-track@2x.png"; sourceTree = "<group>"; };
 		E2B7CB81140584DA0030FE6E /* seq-grass-morethanhalf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "seq-grass-morethanhalf.png"; sourceTree = "<group>"; };
 		E2B7CB82140584DA0030FE6E /* seq-grass-morethanhalf@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "seq-grass-morethanhalf@2x.png"; sourceTree = "<group>"; };
+		E2BD1C2F1832DC6600A6BEC7 /* ClassroomToggleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ClassroomToggleCell.xib; path = BioKIDS/Resources/XIBs/ClassroomToggleCell.xib; sourceTree = "<group>"; };
+		E2BD1C311832FD1100A6BEC7 /* ClassroomToggleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClassroomToggleCell.h; path = Classes/ClassroomToggleCell.h; sourceTree = "<group>"; };
+		E2BD1C321832FD1100A6BEC7 /* ClassroomToggleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassroomToggleCell.m; path = Classes/ClassroomToggleCell.m; sourceTree = "<group>"; };
+		E2C5D1D0185624AB005428BA /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E2C84C2B14028B7B00CBA768 /* ServerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerVC.h; path = Classes/ServerVC.h; sourceTree = "<group>"; };
 		E2C84C2C14028B7B00CBA768 /* ServerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerVC.m; path = Classes/ServerVC.m; sourceTree = "<group>"; };
 		E2C84C2D14028B7B00CBA768 /* ServerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ServerVC.xib; path = BioKIDS/Resources/XIBs/ServerVC.xib; sourceTree = "<group>"; };
-		E2C84C8E1404390100CBA768 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "BioKIDS/Resources/Images/Icon-72.png"; sourceTree = "<group>"; };
-		E2C84C8F1404390100CBA768 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "BioKIDS/Resources/Images/Icon-Small-50.png"; sourceTree = "<group>"; };
-		E2C84C901404390100CBA768 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "BioKIDS/Resources/Images/Icon-Small.png"; sourceTree = "<group>"; };
-		E2C84C911404390100CBA768 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "BioKIDS/Resources/Images/Icon-Small@2x.png"; sourceTree = "<group>"; };
-		E2C84C921404390100CBA768 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "BioKIDS/Resources/Images/Icon@2x.png"; sourceTree = "<group>"; };
-		E2C84C981404400E00CBA768 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = BioKIDS/Resources/Images/Default.png; sourceTree = "<group>"; };
-		E2C84C991404400E00CBA768 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "BioKIDS/Resources/Images/Default@2x.png"; sourceTree = "<group>"; };
-		E2C84C9C1404423800CBA768 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape.png"; path = "BioKIDS/Resources/Images/Default-Landscape.png"; sourceTree = "<group>"; };
-		E2C84C9D1404423800CBA768 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait.png"; path = "BioKIDS/Resources/Images/Default-Portrait.png"; sourceTree = "<group>"; };
+		E2C9E80B18843CAF004A30E5 /* photoPlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = photoPlaceholder.png; path = BioKIDS/Resources/Images/photoPlaceholder.png; sourceTree = "<group>"; };
+		E2C9E80D18844114004A30E5 /* photoPlaceholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "photoPlaceholder@2x.png"; path = "BioKIDS/Resources/Images/photoPlaceholder@2x.png"; sourceTree = "<group>"; };
+		E2E047C7183AC10900DF1491 /* HomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeView.h; path = Classes/HomeView.h; sourceTree = "<group>"; };
+		E2E047C8183AC10900DF1491 /* HomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeView.m; path = Classes/HomeView.m; sourceTree = "<group>"; };
 		E2F4EE0713F70E9E00706787 /* tracker-sanjo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tracker-sanjo.png"; path = "BioKIDS/Resources/Images/Trackers/tracker-sanjo.png"; sourceTree = "<group>"; };
 		E2F4EE1213F70F2700706787 /* tracker-alem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tracker-alem.png"; path = "BioKIDS/Resources/Images/Trackers/tracker-alem.png"; sourceTree = "<group>"; };
+		E2F65A91185F60E100F04A1F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = BioKIDS/Images.xcassets; sourceTree = "<group>"; };
 		E2F7E2AF13F0C9B7001C7A6C /* SeqChooseNVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeqChooseNVC.h; path = Classes/SeqChooseNVC.h; sourceTree = "<group>"; };
 		E2F7E2B013F0C9B7001C7A6C /* SeqChooseNVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeqChooseNVC.m; path = Classes/SeqChooseNVC.m; sourceTree = "<group>"; };
 		E2F7E2B213F0C9C1001C7A6C /* SeqChooseNVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SeqChooseNVC.xib; path = BioKIDS/Resources/XIBs/SeqChooseNVC.xib; sourceTree = "<group>"; };
-		E2FCC6011433B5E000DBE056 /* observe-highlight-iphone-landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "observe-highlight-iphone-landscape.png"; path = "BioKIDS/Resources/Images/MainMenu/observe-highlight-iphone-landscape.png"; sourceTree = "<group>"; };
-		E2FCC6041433B7A400DBE056 /* observe-highlight-ipad-landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "observe-highlight-ipad-landscape.png"; path = "BioKIDS/Resources/Images/MainMenu/observe-highlight-ipad-landscape.png"; sourceTree = "<group>"; };
-		E2FCC6051433B7A400DBE056 /* observe-highlight-ipad-portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "observe-highlight-ipad-portrait.png"; path = "BioKIDS/Resources/Images/MainMenu/observe-highlight-ipad-portrait.png"; sourceTree = "<group>"; };
+		E2FCC6051433B7A400DBE056 /* observe-highlight-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "observe-highlight-ipad.png"; path = "BioKIDS/Resources/Images/MainMenu/observe-highlight-ipad.png"; sourceTree = "<group>"; };
 		E2FCC60D1433F5D600DBE056 /* ServerSettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerSettingsVC.h; path = Classes/ServerSettingsVC.h; sourceTree = "<group>"; };
 		E2FCC60E1433F5D600DBE056 /* ServerSettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerSettingsVC.m; path = Classes/ServerSettingsVC.m; sourceTree = "<group>"; };
 		E2FCC60F1433F5D600DBE056 /* ServerSettingsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ServerSettingsVC.xib; path = BioKIDS/Resources/XIBs/ServerSettingsVC.xib; sourceTree = "<group>"; };
@@ -401,9 +419,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2C5D1D1185624AB005428BA /* MessageUI.framework in Frameworks */,
 				E28EC6DC13F05B59001917B5 /* UIKit.framework in Frameworks */,
 				E28EC6DE13F05B59001917B5 /* Foundation.framework in Frameworks */,
 				E28EC6E013F05B59001917B5 /* CoreGraphics.framework in Frameworks */,
+				E208913E1857A246009E03D0 /* CoreLocation.framework in Frameworks */,
 				E28EC6E213F05B59001917B5 /* CoreData.framework in Frameworks */,
 				E28FA49E1434E356000B5F41 /* CFNetwork.framework in Frameworks */,
 				E2FCC6271434C14F00DBE056 /* Security.framework in Frameworks */,
@@ -413,19 +433,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E20F08AB13F08186008BA7B9 /* Icons */ = {
-			isa = PBXGroup;
-			children = (
-				E20F08AC13F0819D008BA7B9 /* Icon.png */,
-				E2C84C921404390100CBA768 /* Icon@2x.png */,
-				E2C84C8E1404390100CBA768 /* Icon-72.png */,
-				E2C84C8F1404390100CBA768 /* Icon-Small-50.png */,
-				E2C84C901404390100CBA768 /* Icon-Small.png */,
-				E2C84C911404390100CBA768 /* Icon-Small@2x.png */,
-			);
-			name = Icons;
-			sourceTree = "<group>";
-		};
 		E2215DCC13FAAC9C00311BA1 /* animalgroups */ = {
 			isa = PBXGroup;
 			children = (
@@ -447,30 +454,32 @@
 		E238866513F06F1E00ABA3B6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E2F65A91185F60E100F04A1F /* Images.xcassets */,
 				E28EC6EF13F05B59001917B5 /* BioKIDS.xcdatamodeld */,
+				E279CFFD1818AD9800440BDB /* BioKIDS1_2.xcmappingmodel */,
 				E20F088A13F07AAD008BA7B9 /* HomeVC.xib */,
 				E292015913F2DBDD00B18653 /* ObservationsVC.xib */,
 				E26A9BCD13F16DFA0074C87A /* SeqChoose1VC.xib */,
 				E2F7E2B213F0C9C1001C7A6C /* SeqChooseNVC.xib */,
 				E222114A13F1A77800560592 /* SeqCountVC.xib */,
+				E229727E185B702D00327478 /* SeqLocationVC.xib */,
+				E238F8FC180FF27800BCDEB1 /* SeqPhotoVC.xib */,
 				E222115B13F1B31300560592 /* SeqTextVC.xib */,
 				E2C84C2D14028B7B00CBA768 /* ServerVC.xib */,
 				E2FCC60F1433F5D600DBE056 /* ServerSettingsVC.xib */,
 				E276CD7013F46E4F00B9BF18 /* SettingsVC.xib */,
 				E26AC00713F5AA8E00A95429 /* SettingsChoose1VC.xib */,
+				E2BD1C2F1832DC6600A6BEC7 /* ClassroomToggleCell.xib */,
 				E276CD7213F4738B00B9BF18 /* BioKIDSIDCell.xib */,
 				E20F08C313F08B11008BA7B9 /* InfoVC.xib */,
 				E20F08DD13F090BB008BA7B9 /* about.html */,
 				E20F08E013F093D8008BA7B9 /* help.html */,
 				E26A9BED13F184FD0074C87A /* blank-40.png */,
-				E2C84C981404400E00CBA768 /* Default.png */,
-				E2C84C991404400E00CBA768 /* Default@2x.png */,
-				E2C84C9D1404423800CBA768 /* Default-Portrait.png */,
-				E2C84C9C1404423800CBA768 /* Default-Landscape.png */,
-				E20F08AB13F08186008BA7B9 /* Icons */,
 				E238866913F071F800ABA3B6 /* MainMenuImages */,
 				E2F4EDFC13F70C2F00706787 /* Trackers */,
 				E20F08C513F08E10008BA7B9 /* logo.png */,
+				E2C9E80B18843CAF004A30E5 /* photoPlaceholder.png */,
+				E2C9E80D18844114004A30E5 /* photoPlaceholder@2x.png */,
 				E26AC00D13F5C39100A95429 /* trackers.plist */,
 				E26AC00213F5A95800A95429 /* zones.plist */,
 				E238866213F06B0800ABA3B6 /* Localizable.strings */,
@@ -487,10 +496,12 @@
 				E2A1C2451427ADC10031A905 /* home-ipad-portrait.png */,
 				E2A1C2461427ADC10031A905 /* home-iphone-landscape.png */,
 				E2A1C2471427ADC10031A905 /* home-iphone-portrait.png */,
-				E2FCC6041433B7A400DBE056 /* observe-highlight-ipad-landscape.png */,
-				E2FCC6051433B7A400DBE056 /* observe-highlight-ipad-portrait.png */,
-				E2FCC6011433B5E000DBE056 /* observe-highlight-iphone-landscape.png */,
-				E22FB6B21433A3A00067B9EE /* observe-highlight-iphone-portrait.png */,
+				E247AF171836C86A00165919 /* home-kids-ipad.png */,
+				E247AF191836CCC000165919 /* home-kids-ipad@2x.png */,
+				E247AF1A1836CCC000165919 /* home-kids-iphone.png */,
+				E247AF1B1836CCC000165919 /* home-kids-iphone@2x.png */,
+				E2FCC6051433B7A400DBE056 /* observe-highlight-ipad.png */,
+				E22FB6B21433A3A00067B9EE /* observe-highlight-iphone.png */,
 				E238867813F0766D00ABA3B6 /* SaveToServer.png */,
 				E23D07D113FD591B00213368 /* SaveToServer@2x.png */,
 				E22FB6AD143384670067B9EE /* Settings.png */,
@@ -529,6 +540,8 @@
 				E28EC6E113F05B59001917B5 /* CoreData.framework */,
 				E28FA49D1434E356000B5F41 /* CFNetwork.framework */,
 				E2FCC6261434C14E00DBE056 /* Security.framework */,
+				E208913D1857A246009E03D0 /* CoreLocation.framework */,
+				E2C5D1D0185624AB005428BA /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -544,6 +557,8 @@
 				E286F2A713F96B0E00BF8358 /* Observation.m */,
 				E2A1C2341427AB2A0031A905 /* HomeVC.h */,
 				E2A1C2351427AB2A0031A905 /* HomeVC.m */,
+				E2E047C7183AC10900DF1491 /* HomeView.h */,
+				E2E047C8183AC10900DF1491 /* HomeView.m */,
 				E292015413F2DBB000B18653 /* ObservationsVC.h */,
 				E292015513F2DBB000B18653 /* ObservationsVC.m */,
 				E26CD6FE14111DB40087476E /* ObservationCell.h */,
@@ -554,6 +569,10 @@
 				E2F7E2B013F0C9B7001C7A6C /* SeqChooseNVC.m */,
 				E222113A13F19C0800560592 /* SeqCountVC.h */,
 				E222113B13F19C0800560592 /* SeqCountVC.m */,
+				E2297280185B709400327478 /* SeqLocationVC.h */,
+				E2297281185B709400327478 /* SeqLocationVC.m */,
+				E238F8FA180FF27800BCDEB1 /* SeqPhotoVC.h */,
+				E238F8FB180FF27800BCDEB1 /* SeqPhotoVC.m */,
 				E222115613F1B2B900560592 /* SeqTextVC.h */,
 				E222115713F1B2B900560592 /* SeqTextVC.m */,
 				E2C84C2B14028B7B00CBA768 /* ServerVC.h */,
@@ -564,12 +583,16 @@
 				E276CD6C13F46E2600B9BF18 /* SettingsVC.m */,
 				E26AC00513F5AA8E00A95429 /* SettingsChoose1VC.h */,
 				E26AC00613F5AA8E00A95429 /* SettingsChoose1VC.m */,
+				E2BD1C311832FD1100A6BEC7 /* ClassroomToggleCell.h */,
+				E2BD1C321832FD1100A6BEC7 /* ClassroomToggleCell.m */,
 				E276CD7413F473A000B9BF18 /* BioKIDSIDCell.h */,
 				E276CD7513F473A000B9BF18 /* BioKIDSIDCell.m */,
 				E20F08C013F08A76008BA7B9 /* InfoVC.h */,
 				E20F08C113F08A76008BA7B9 /* InfoVC.m */,
 				E26A9BE813F175D00074C87A /* BioKIDSUtil.h */,
 				E26A9BE913F175D00074C87A /* BioKIDSUtil.m */,
+				E208913F1857AB30009E03D0 /* BioKIDSLocationManager.h */,
+				E20891401857AB30009E03D0 /* BioKIDSLocationManager.m */,
 				E28EC6F213F05B59001917B5 /* iPhone */,
 				E28EC6F913F05B59001917B5 /* iPad */,
 				E238866513F06F1E00ABA3B6 /* Resources */,
@@ -790,7 +813,13 @@
 		E28EC6CE13F05B59001917B5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				ORGANIZATIONNAME = "BioKIDS";
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = BioKIDS;
+				TargetAttributes = {
+					E28EC6D613F05B59001917B5 = {
+						DevelopmentTeam = Z4N9W47D2U;
+					};
+				};
 			};
 			buildConfigurationList = E28EC6D113F05B59001917B5 /* Build configuration list for PBXProject "BioKIDS" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -821,7 +850,6 @@
 				E238867913F0766D00ABA3B6 /* SaveToServer.png in Resources */,
 				E238867E13F077BF00ABA3B6 /* About.png in Resources */,
 				E238867F13F077BF00ABA3B6 /* Help.png in Resources */,
-				E20F08AD13F0819D008BA7B9 /* Icon.png in Resources */,
 				E20F08C413F08B11008BA7B9 /* InfoVC.xib in Resources */,
 				E20F08C613F08E10008BA7B9 /* logo.png in Resources */,
 				E20F08DE13F090BB008BA7B9 /* about.html in Resources */,
@@ -846,6 +874,7 @@
 				E2F4EE1313F70F2700706787 /* tracker-alem.png in Resources */,
 				E2215DD913FAAE6A00311BA1 /* seq-0legs-mollusk.png in Resources */,
 				E2215DDA13FAAE6A00311BA1 /* seq-0legs-worm.png in Resources */,
+				E247AF1C1836CCC000165919 /* home-kids-ipad@2x.png in Resources */,
 				E2215DDB13FAAE6A00311BA1 /* seq-amphibian.png in Resources */,
 				E2215DDC13FAAE6A00311BA1 /* seq-arachnid.png in Resources */,
 				E2215DDD13FAAE6A00311BA1 /* seq-bird.png in Resources */,
@@ -881,6 +910,7 @@
 				E2B09BA513FEB0FD00B452B4 /* seq-bare-ground.png in Resources */,
 				E2B09BA613FEB0FD00B452B4 /* seq-bare-ground@2x.png in Resources */,
 				E2B09BA713FEB0FD00B452B4 /* seq-bushes.png in Resources */,
+				E229727F185B702D00327478 /* SeqLocationVC.xib in Resources */,
 				E2B09BA813FEB0FD00B452B4 /* seq-bushes@2x.png in Resources */,
 				E2B09BA913FEB0FD00B452B4 /* seq-in-the-air.png in Resources */,
 				E2B09BAA13FEB0FD00B452B4 /* seq-in-the-air@2x.png in Resources */,
@@ -895,24 +925,30 @@
 				E2B09BB313FEB0FD00B452B4 /* seq-short-grass.png in Resources */,
 				E2B09BB413FEB0FD00B452B4 /* seq-short-grass@2x.png in Resources */,
 				E2B09BB513FEB0FD00B452B4 /* seq-single-tree.png in Resources */,
+				E247AF1D1836CCC000165919 /* home-kids-iphone.png in Resources */,
 				E2B09BB613FEB0FD00B452B4 /* seq-single-tree@2x.png in Resources */,
 				E2B09BB713FEB0FD00B452B4 /* seq-tall-grass.png in Resources */,
 				E2B09BB813FEB0FD00B452B4 /* seq-tall-grass@2x.png in Resources */,
+				E2C9E80C18843CAF004A30E5 /* photoPlaceholder.png in Resources */,
 				E2B09BB913FEB0FD00B452B4 /* seq-trees-together.png in Resources */,
 				E2B09BBA13FEB0FD00B452B4 /* seq-trees-together@2x.png in Resources */,
 				E2B09BBB13FEB0FD00B452B4 /* seq-under-something.png in Resources */,
 				E2B09BBC13FEB0FD00B452B4 /* seq-under-something@2x.png in Resources */,
 				E2B09BC713FEB7E900B452B4 /* seq-liveanimal.png in Resources */,
+				E2F65A92185F60E100F04A1F /* Images.xcassets in Resources */,
 				E2B09BC813FEB7E900B452B4 /* seq-liveanimal@2x.png in Resources */,
 				E2B09BC913FEB7E900B452B4 /* seq-othersigns.png in Resources */,
+				E247AF181836C86A00165919 /* home-kids-ipad.png in Resources */,
 				E2B09BCA13FEB7E900B452B4 /* seq-othersigns@2x.png in Resources */,
 				E2B09BCB13FEB7E900B452B4 /* seq-plant.png in Resources */,
 				E2B09BCC13FEB7E900B452B4 /* seq-plant@2x.png in Resources */,
 				E2B09BCD13FEB7E900B452B4 /* seq-track.png in Resources */,
+				E238F8FE180FF27800BCDEB1 /* SeqPhotoVC.xib in Resources */,
 				E2B09BCE13FEB7E900B452B4 /* seq-track@2x.png in Resources */,
 				E2B0812413FEDC3E00A0537C /* seq-feel.png in Resources */,
 				E2B0812513FEDC3E00A0537C /* seq-feel@2x.png in Resources */,
 				E2B0812613FEDC3E00A0537C /* seq-hear.png in Resources */,
+				E2BD1C301832DC6600A6BEC7 /* ClassroomToggleCell.xib in Resources */,
 				E2B0812713FEDC3E00A0537C /* seq-hear@2x.png in Resources */,
 				E2B0812813FEDC3E00A0537C /* seq-see.png in Resources */,
 				E2B0812913FEDC3E00A0537C /* seq-see@2x.png in Resources */,
@@ -935,25 +971,18 @@
 				E2AA89371405422300BA830C /* seq-resting.png in Resources */,
 				E2AA89381405422300BA830C /* seq-resting@2x.png in Resources */,
 				E2AA89391405422300BA830C /* seq-signaling.png in Resources */,
+				E2C9E80E18844114004A30E5 /* photoPlaceholder@2x.png in Resources */,
 				E2AA893A1405422300BA830C /* seq-signaling@2x.png in Resources */,
 				E2AA89451405423800BA830C /* seq-grass-abouthalf.png in Resources */,
 				E2AA89461405423800BA830C /* seq-grass-abouthalf@2x.png in Resources */,
 				E2AA89471405423800BA830C /* seq-grass-almostall.png in Resources */,
 				E2AA89481405423800BA830C /* seq-grass-almostall@2x.png in Resources */,
 				E2AA89491405423800BA830C /* seq-grass-almostnone.png in Resources */,
+				E247AF1E1836CCC000165919 /* home-kids-iphone@2x.png in Resources */,
 				E2AA894A1405423800BA830C /* seq-grass-almostnone@2x.png in Resources */,
 				E2AA894B1405423800BA830C /* seq-grass-lessthanhalf.png in Resources */,
 				E2AA894C1405423800BA830C /* seq-grass-lessthanhalf@2x.png in Resources */,
 				E2C84C2F14028B7B00CBA768 /* ServerVC.xib in Resources */,
-				E2C84C931404390100CBA768 /* Icon-72.png in Resources */,
-				E2C84C941404390100CBA768 /* Icon-Small-50.png in Resources */,
-				E2C84C951404390100CBA768 /* Icon-Small.png in Resources */,
-				E2C84C961404390100CBA768 /* Icon-Small@2x.png in Resources */,
-				E2C84C971404390100CBA768 /* Icon@2x.png in Resources */,
-				E2C84C9A1404400E00CBA768 /* Default.png in Resources */,
-				E2C84C9B1404400E00CBA768 /* Default@2x.png in Resources */,
-				E2C84C9E1404423800CBA768 /* Default-Landscape.png in Resources */,
-				E2C84C9F1404423800CBA768 /* Default-Portrait.png in Resources */,
 				E2B7CB83140584DB0030FE6E /* seq-grass-morethanhalf.png in Resources */,
 				E2B7CB84140584DB0030FE6E /* seq-grass-morethanhalf@2x.png in Resources */,
 				E2A1C2481427ADC10031A905 /* home-ipad-landscape.png in Resources */,
@@ -962,10 +991,8 @@
 				E2A1C24B1427ADC10031A905 /* home-iphone-portrait.png in Resources */,
 				E22FB6AF143384670067B9EE /* Settings.png in Resources */,
 				E22FB6B0143384670067B9EE /* Settings@2x.png in Resources */,
-				E22FB6B31433A3A00067B9EE /* observe-highlight-iphone-portrait.png in Resources */,
-				E2FCC6021433B5E000DBE056 /* observe-highlight-iphone-landscape.png in Resources */,
-				E2FCC6061433B7A400DBE056 /* observe-highlight-ipad-landscape.png in Resources */,
-				E2FCC6071433B7A400DBE056 /* observe-highlight-ipad-portrait.png in Resources */,
+				E22FB6B31433A3A00067B9EE /* observe-highlight-iphone.png in Resources */,
+				E2FCC6071433B7A400DBE056 /* observe-highlight-ipad.png in Resources */,
 				E2FCC6111433F5D600DBE056 /* ServerSettingsVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -982,14 +1009,20 @@
 				E28EC6F513F05B59001917B5 /* BioKIDSAppDelegate_iPhone.m in Sources */,
 				E28EC6FC13F05B59001917B5 /* BioKIDSAppDelegate_iPad.m in Sources */,
 				E20F088B13F07AAD008BA7B9 /* BioKIDSAppDelegate.m in Sources */,
+				E2297282185B709400327478 /* SeqLocationVC.m in Sources */,
 				E20F088C13F07AAD008BA7B9 /* HomeVC.xib in Sources */,
 				E20F08C213F08A76008BA7B9 /* InfoVC.m in Sources */,
+				E2E047C9183AC10900DF1491 /* HomeView.m in Sources */,
+				E2BD1C331832FD1100A6BEC7 /* ClassroomToggleCell.m in Sources */,
 				E2F7E2B113F0C9B7001C7A6C /* SeqChooseNVC.m in Sources */,
 				E26A9BD213F16E100074C87A /* SeqChoose1VC.m in Sources */,
 				E26A9BEA13F175D00074C87A /* BioKIDSUtil.m in Sources */,
+				E238F8FD180FF27800BCDEB1 /* SeqPhotoVC.m in Sources */,
 				E222113D13F19C0800560592 /* SeqCountVC.m in Sources */,
 				E222115913F1B2B900560592 /* SeqTextVC.m in Sources */,
+				E20891411857AB30009E03D0 /* BioKIDSLocationManager.m in Sources */,
 				E292015713F2DBB000B18653 /* ObservationsVC.m in Sources */,
+				E279CFFE1818AD9800440BDB /* BioKIDS1_2.xcmappingmodel in Sources */,
 				E276CD6E13F46E2600B9BF18 /* SettingsVC.m in Sources */,
 				E276CD7613F473A000B9BF18 /* BioKIDSIDCell.m in Sources */,
 				E26AC00813F5AA8E00A95429 /* SettingsChoose1VC.m in Sources */,
@@ -1071,15 +1104,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Pearl Crescent LLC";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos7.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Distribution;
@@ -1088,16 +1122,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BioKIDS/BioKIDS-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "BioKIDS/BioKIDS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -1108,7 +1141,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mark Smith (68Z9UK74T8)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -1116,9 +1149,11 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos7.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1127,15 +1162,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mark Smith (68Z9UK74T8)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos7.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1144,7 +1180,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1152,9 +1189,7 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "BioKIDS/BioKIDS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1164,16 +1199,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BioKIDS/BioKIDS-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "BioKIDS/BioKIDS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -1209,9 +1243,10 @@
 		E28EC6EF13F05B59001917B5 /* BioKIDS.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				E279CFFA1818A88B00440BDB /* BioKIDS2.xcdatamodel */,
 				E28EC6F013F05B59001917B5 /* BioKIDS.xcdatamodel */,
 			);
-			currentVersion = E28EC6F013F05B59001917B5 /* BioKIDS.xcdatamodel */;
+			currentVersion = E279CFFA1818A88B00440BDB /* BioKIDS2.xcdatamodel */;
 			name = BioKIDS.xcdatamodeld;
 			path = BioKIDS/BioKIDS.xcdatamodeld;
 			sourceTree = "<group>";

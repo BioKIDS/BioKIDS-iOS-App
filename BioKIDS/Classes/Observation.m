@@ -2,7 +2,7 @@
   Observation.m
   Created 8/15/11.
 
-  Copyright (c) 2011 The Regents of the University of Michigan
+  Copyright (c) 2011-2013 The Regents of the University of Michigan
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
@@ -48,7 +48,8 @@
 NSString * const kHTMLRowFmt = @"<tr><td valign='top' nowrap>%@&nbsp;</td><td><b>%@</b></td></tr>\n";
 
 
-// The first 6 are required (GUID,Completed,Timestamp,BioKIDSID,Tracker,Zone).
+// The first 3 are required (GUID, Completed, Timestamp).
+// In classroom mode, BioKIDSID, Tracker, and Zone are also required.
 @dynamic GUID;					// 36-character hex (unique ID).
 @dynamic Timestamp;
 @dynamic Completed;				// NSNumber boolValue (is this observation complete?)
@@ -70,6 +71,40 @@ NSString * const kHTMLRowFmt = @"<tr><td valign='top' nowrap>%@&nbsp;</td><td><b
 @dynamic ImagePath;
 @dynamic Latitude;				// NSNumber doubleValue
 @dynamic Longitude;				// NSNumber doubleValue
+@dynamic locationAccuracy;		// NSNumber doubleValue
+@dynamic locationDescription;	// e.g., Slauson Middle School, Ann Arbor, MI
+
+
+// Mark this object for deletion.  The associated image file is also removed.
+// The managed object context is not saved.
+- (void)deleteObservation
+{
+	if ([self.ImagePath length] > 0)
+	{
+		NSFileManager *fm = [NSFileManager defaultManager];
+		NSError *err = nil;
+		if (![fm removeItemAtPath:self.ImagePath error:&err])
+		{
+			NSLog(@"failed to remove image %@: %@\n",
+				  self.ImagePath, [err localizedDescription]);
+		}
+	}
+
+	[self.managedObjectContext deleteObject:self];
+}
+
+
+- (void)updateLocation
+{
+	BioKIDSUtil *bku = [BioKIDSUtil sharedBioKIDSUtil];
+	CLLocation *loc = [bku recentValidLocation];
+	if (loc)
+	{
+		self.Latitude = [NSNumber numberWithDouble:loc.coordinate.latitude];
+		self.Longitude = [NSNumber numberWithDouble:loc.coordinate.longitude];
+		self.locationAccuracy = [NSNumber numberWithDouble:loc.horizontalAccuracy];
+	}
+}
 
 
 - (NSString *)dateString:(BOOL)aFriendly
@@ -154,13 +189,26 @@ NSString * const kHTMLRowFmt = @"<tr><td valign='top' nowrap>%@&nbsp;</td><td><b
 
 
 // May return nil.
+- (NSString *)latLongString
+{
+	if (!self.Latitude || !self.Longitude)
+		return nil;
+	
+	return [NSString stringWithFormat:@"%f, %f",
+			[self.Latitude doubleValue], [self.Longitude doubleValue]];
+}
+
+
+
+// May return nil.
 - (NSString *)serverString
 {
 	// Note: fieldMap must have exactly the same number of items as kCSVColumns.
 	// A leading _A_ means only include for Animals.
 	// A leading _P_ means only include for Plants.
+	// A leading _F_ means treat the value as a file path.
 	// A leading | means change pipe characters to commas (multivalued field).
-	static NSString *fieldMap = @"GUID,,,BioKIDSID,Zone,Tracker,|HowSensed,WhatSensed,_A_Group,_A_Species,|Microhabitat,|Behavior,WhatEating,HowMany,,_P_Species,,,,Notes";
+	static NSString *fieldMap = @"GUID,,,BioKIDSID,Zone,Tracker,|HowSensed,WhatSensed,_A_Group,_A_Species,|Microhabitat,|Behavior,WhatEating,HowMany,,_P_Species,,,,locationDescription,Latitude,Longitude,LocationAccuracy,Notes,_F_ImagePath";
 
 	NSArray *cols = [kCSVColumns componentsSeparatedByString:@","];
 	NSArray *fields = [fieldMap componentsSeparatedByString:@","];
@@ -179,6 +227,7 @@ NSString * const kHTMLRowFmt = @"<tr><td valign='top' nowrap>%@&nbsp;</td><td><b
 		{
 			BOOL skip = NO;
 			BOOL isMultiValue = NO;
+			BOOL isFilePath = NO;
 
 			if ([fieldName hasPrefix:@"_A_"])
 			{
@@ -188,6 +237,11 @@ NSString * const kHTMLRowFmt = @"<tr><td valign='top' nowrap>%@&nbsp;</td><td><b
 			else if ([fieldName hasPrefix:@"_P_"])
 			{
 				skip = isAnimal;
+				fieldName = [fieldName substringFromIndex:3];
+			}
+			else if ([fieldName hasPrefix:@"_F_"])
+			{
+				isFilePath = YES;
 				fieldName = [fieldName substringFromIndex:3];
 			}
 			else if ([fieldName hasPrefix:@"|"])
@@ -209,6 +263,9 @@ NSString * const kHTMLRowFmt = @"<tr><td valign='top' nowrap>%@&nbsp;</td><td><b
 					}
 					else
 						value = valueObj;
+
+					if (isFilePath)	// Only include file name portion.
+						value = [value lastPathComponent];
 				}
 				else if ([valueObj isKindOfClass:[NSNumber class]])
 					value = [valueObj stringValue];
@@ -261,6 +318,13 @@ NSString * const kHTMLRowFmt = @"<tr><td valign='top' nowrap>%@&nbsp;</td><td><b
 	NSMutableString *resultStr = [NSMutableString stringWithCapacity:300];
 	[resultStr appendString:htmlPrefix];
 
+	if ([self.ImagePath length] > 0)
+	{
+		NSString * const kImgRowFmt = @"<tr><td valign='top' colspan='2' nowrap><img src='%@' width='150'></td></tr>\n";
+		NSString *fileName = [self.ImagePath lastPathComponent];
+		[resultStr appendFormat:kImgRowFmt, fileName];
+	}
+
 	NSString *dateStr = [NSString stringWithFormat:@"<b>%@</b>",
 												[self dateString:YES]];
 	[resultStr appendFormat:kHTMLRowFmt, dateStr, [self timeString:YES]];
@@ -303,6 +367,23 @@ NSString * const kHTMLRowFmt = @"<tr><td valign='top' nowrap>%@&nbsp;</td><td><b
 				  value:self.Behavior multiValue:YES];
 	[self appendHTMLRowWithKey:resultStr labelKey:@"HTMLLabelEating"
 				  value:self.WhatEating multiValue:NO];
+	[self appendHTMLRowWithKey:resultStr labelKey:@"HTMLLabelLocationDesc"
+						 value:self.locationDescription multiValue:NO];
+
+	NSString *latLongString = [self latLongString];
+	if (latLongString)
+	{
+		[self appendHTMLRowWithKey:resultStr labelKey:@"HTMLLabelGeoLocation"
+							 value:latLongString multiValue:NO];
+	}
+	
+	if (self.Latitude && self.Longitude)
+	{
+		NSString *fmt = NSLocalizedString(@"HTMLShowOnMapFmt", nil);
+		NSString *s = [NSString stringWithFormat:fmt,
+					   [self.Latitude doubleValue], [self.Longitude doubleValue]];
+		[resultStr appendFormat:kHTMLRowFmt, @"", s];
+	}
 	[self appendHTMLRowWithKey:resultStr labelKey:@"HTMLLabelNotes"
 				  value:self.Notes multiValue:NO];
 

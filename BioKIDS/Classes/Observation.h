@@ -2,7 +2,7 @@
   Observation.h
   Created 8/15/11.
 
-  Copyright (c) 2011 The Regents of the University of Michigan
+  Copyright (c) 2011-2013 The Regents of the University of Michigan
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
@@ -52,14 +52,19 @@
 @property (nonatomic, retain) NSString * ImagePath;
 @property (nonatomic, retain) NSNumber * Latitude;
 @property (nonatomic, retain) NSNumber * Longitude;
+@property (nonatomic, retain) NSNumber * locationAccuracy;
+@property (nonatomic, retain) NSString * locationDescription;
 
 // Public Methods:
+- (void)deleteObservation;
+- (void)updateLocation;
 - (NSString *)dateString:(BOOL)aFriendly;
 - (NSString *)timeString:(BOOL)aFriendly;
 - (NSString *)grassCoverageString;
 - (NSString *)howExactString;
 - (NSString *)energyRoleString;
 - (NSString *)consumerTypeString;
+- (NSString *)latLongString;
 - (NSString *)serverString;	// CSV
 - (NSString *)htmlString;
 

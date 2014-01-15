@@ -95,6 +95,7 @@ const NSInteger kContainerTag = 200;
 	self.mUserNameField.text = [ud valueForKey:kUserNameKey];
 
 	BioKIDSUtil *bku = [BioKIDSUtil sharedBioKIDSUtil];
+	self.view.backgroundColor = [bku appBackgroundColor];
 	self.mPasswordField.text = [bku retrievePassword];
 }
 

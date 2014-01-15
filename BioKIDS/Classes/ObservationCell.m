@@ -2,7 +2,7 @@
   ObservationCell.m
   Created 9/2/11.
 
-  Copyright (c) 2011 The Regents of the University of Michigan
+  Copyright (c) 2011-2013 The Regents of the University of Michigan
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
@@ -41,13 +41,13 @@ const CGFloat kZoneLabelMargin = 8.0;
 				reuseIdentifier:aReuseID];
 	if (self)
 	{
-		self.textLabel.lineBreakMode = UILineBreakModeMiddleTruncation;
+		self.textLabel.lineBreakMode = NSLineBreakByTruncatingMiddle;
 
 		// Add right-aligned label for zone.
 		CGRect r = {0.0};  // Adjusted in layoutSubviews
 		self.mZoneLabel = [[[UILabel alloc] initWithFrame:r] autorelease];
-		self.mZoneLabel.textAlignment = UITextAlignmentRight;
-		self.mZoneLabel.lineBreakMode = UILineBreakModeTailTruncation;
+		self.mZoneLabel.textAlignment = NSTextAlignmentRight;
+		self.mZoneLabel.lineBreakMode = NSLineBreakByTruncatingTail;
 		[self.contentView addSubview:self.mZoneLabel];
 	}
 
@@ -66,6 +66,8 @@ const CGFloat kZoneLabelMargin = 8.0;
 - (void) prepareForReuse
 {
 	self.mDidInheritCharacteristics = NO;
+
+	[super prepareForReuse];
 }
 
 

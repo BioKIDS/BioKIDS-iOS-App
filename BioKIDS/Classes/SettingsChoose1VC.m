@@ -2,7 +2,7 @@
   SettingsChoose1VC.m
   Created 8/12/11.
 
-  Copyright (c) 2011 The Regents of the University of Michigan
+  Copyright (c) 2011-2013 The Regents of the University of Michigan
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
@@ -25,6 +25,7 @@
 */
 
 #import "SettingsChoose1VC.h"
+#import "BioKIDSUtil.h"
 
 
 // Declare private methods.
@@ -39,7 +40,8 @@
 @synthesize mItems, mPrefKey, mIconHeight, mSelectedItemIndex;
 
 // Define constants.
-const CGFloat kIconVerticalMargin = 4.0;
+static const CGFloat kIconVerticalMargin = 4.0;
+static const NSInteger kNoneRowIndex = 0;
 
 
 - (id)initWithList:(NSString *)aFileBaseName prefKey:(NSString *)aPrefKey
@@ -81,6 +83,8 @@ const CGFloat kIconVerticalMargin = 4.0;
 					break;
 				}
 			}
+			if (self.mSelectedItemIndex < 0)
+				self.mSelectedItemIndex = kNoneRowIndex;
 		}
 	}
 
@@ -111,8 +115,11 @@ const CGFloat kIconVerticalMargin = 4.0;
 {
 	[super viewDidLoad];
 
+	BioKIDSUtil *bku = [BioKIDSUtil sharedBioKIDSUtil];
 	self.tableView.backgroundView = nil;	// Needed for transparent background.
-
+	self.view.backgroundColor = [bku appBackgroundColor];
+	[bku addEmptyHeaderAndFooterForTable:self.tableView];
+	
 	// TODOFuture: it would be better to avoid using a timer.  For ideas, see:
 	// http://stackoverflow.com/questions/1483581/
 	[self performSelector:@selector(showSelectedItem) withObject:nil
@@ -200,7 +207,11 @@ const CGFloat kIconVerticalMargin = 4.0;
 		self.mSelectedItemIndex = aIndexPath.row;
 		[self configureCell:cell isSelected:YES];
 		NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-		[ud setObject:cell.textLabel.text forKey:self.mPrefKey];
+		if (aIndexPath.row == kNoneRowIndex)
+			[ud removeObjectForKey:self.mPrefKey];
+		else
+			[ud setObject:cell.textLabel.text forKey:self.mPrefKey];
+		[ud synchronize];
 	}
 
 	[aTableView deselectRowAtIndexPath:aIndexPath animated:YES];

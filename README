@@ -3,10 +3,10 @@ middle school students to collect data about plants and animals
 found in their schoolyard or another location.  The collected data
 (observations) may be saved to the BioKIDS server.
 
-Recorded observations are stored in Core Data and uploaded to the server
-in CSV format using NSURLConnection (HTTP POST).
+Recorded observations are stored in Core Data and may be shared in CSV
+format via email.
 
 The data collection sequence (series of screens) is controlled by the
 contents of the BioKIDS/en.lproj/sequence.plist file.
 
-Most recently, the app was built using Xcode 4.0.2 and iOS SDK 4.3.
+Most recently, the app was built using Xcode 5.0.2 and iOS SDK 7.0.

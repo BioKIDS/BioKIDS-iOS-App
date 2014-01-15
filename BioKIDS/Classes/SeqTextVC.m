@@ -2,7 +2,7 @@
   SeqTextVC.m
   Created 8/9/11.
 
-  Copyright (c) 2011 The Regents of the University of Michigan
+  Copyright (c) 2011-2013 The Regents of the University of Michigan
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
@@ -43,7 +43,7 @@
 @synthesize mScreenDict, mObservation, mTextView;
 
 // Constants:
-const CGFloat kTextViewBottomMargin = 8.0;
+static const CGFloat kTextViewBottomMargin = 8.0;
 
 
 -(id)initWithScreen:(NSDictionary *)aScreen
@@ -55,6 +55,10 @@ const CGFloat kTextViewBottomMargin = 8.0;
 	self = [super initWithNibName:@"SeqTextVC" bundle:nil];
 	if (self)
 	{
+		// Disable iOS 7 "feature" that incorrectly positions caret/scrollview.
+		if ([self respondsToSelector:@selector(setAutomaticallyAdjustsScrollViewInsets:)])
+			[self setAutomaticallyAdjustsScrollViewInsets:NO];
+
 		self.mScreenDict = aScreen;
 		self.mObservation = aObservation;
 	}
@@ -87,10 +91,9 @@ const CGFloat kTextViewBottomMargin = 8.0;
 	[super viewDidLoad];
 
 	BioKIDSUtil *bku = [BioKIDSUtil sharedBioKIDSUtil];
+	self.view.backgroundColor = [bku appBackgroundColor];
 	[bku useBackButtonLabel:self];
-	NSString *title = [self.mScreenDict objectForKey:@"title"];
-	[bku configureNavTitle:title forVC:self];
-	
+
 	NSString *action = [self.mScreenDict objectForKey:@"rightButtonAction"];
 	if ([action isEqualToString:kSeqNameObservationList])
 	{
@@ -100,6 +103,9 @@ const CGFloat kTextViewBottomMargin = 8.0;
 		self.navigationItem.rightBarButtonItem = btn;
 		[btn release];
 	}
+
+	NSString *title = [self.mScreenDict objectForKey:@"title"];
+	[bku configureNavTitle:title forVC:self];
 
 	// Add rounded border to text view.
 	self.mTextView.layer.borderColor = [[UIColor grayColor] CGColor];

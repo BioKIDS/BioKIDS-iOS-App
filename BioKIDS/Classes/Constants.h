@@ -2,7 +2,7 @@
   Constants.h
   Created 8/12/11.
 
-  Copyright (c) 2011 The Regents of the University of Michigan
+  Copyright (c) 2011-2013 The Regents of the University of Michigan
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
@@ -29,13 +29,17 @@ extern const NSTimeInterval kNetworkPOSTTimeout;
 
 // Notifications.
 extern NSString * const kNotificationUploadComplete;
+extern NSString * const kNotificationClassroomUseChanged;
 
 // Preference keys and values:
+extern NSString * const kLastVersionKey;
+extern NSString * const kClassroomUseKey;
 extern NSString * const kBioKIDSIDKey;
 extern NSString * const kTrackerKey;
 extern NSString * const kZoneKey;
 extern NSString * const kServerURLKey;
 extern NSString * const kUserNameKey;
+extern NSString * const kLastLocationDescriptionKey;
 
 // Keychain service names:
 extern NSString * const kBioKIDSServiceName;

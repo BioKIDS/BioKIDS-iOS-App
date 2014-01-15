@@ -2,7 +2,7 @@
   BioKIDSIDCell.m
   Created 4/23/10.
 
-  Copyright (c) 2011 The Regents of the University of Michigan
+  Copyright (c) 2011-2013 The Regents of the University of Michigan
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
@@ -33,12 +33,8 @@
 
 - (void) setupCell
 {
-	NSInteger val = [[NSUserDefaults standardUserDefaults]
-						integerForKey:kBioKIDSIDKey];
-	if (val != 0)
-		self.mValue.text = [NSString stringWithFormat:@"%d", val];
-	else
-		self.mValue.text = @"";
+	self.mValue.text = [[NSUserDefaults standardUserDefaults]
+											stringForKey:kBioKIDSIDKey];
 }
 
 
@@ -87,9 +83,8 @@
 {
 	NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
 	NSString *t = self.mValue.text;
-	NSInteger bkid = [t integerValue];
-	if (0 != bkid)
-		[ud setInteger:bkid forKey:kBioKIDSIDKey];
+	if ([t length] != 0)
+		[ud setValue:t forKey:kBioKIDSIDKey];
 	else
 		[ud removeObjectForKey:kBioKIDSIDKey];
 }

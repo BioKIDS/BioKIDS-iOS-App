@@ -2,7 +2,7 @@
   InfoVC.m
   Created 2/18/11.
 
-  Copyright (c) 2011 The Regents of the University of Michigan
+  Copyright (c) 2011-2013 The Regents of the University of Michigan
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
@@ -25,6 +25,7 @@
 */
 
 #import "InfoVC.h"
+#import "BioKIDSUtil.h"
 
 
 // Declare private methods.
@@ -78,6 +79,15 @@ NSString * const kInfoStyle = @"<style type=\"text/css\">body {font-family: Helv
 {
 	[super viewDidLoad];
 
+	BioKIDSUtil *bku = [BioKIDSUtil sharedBioKIDSUtil];
+	if ([bku systemVersionIsAtLeast:@"7.0"])
+		self.view.backgroundColor = [bku appBackgroundColor];
+	else
+	{
+		self.view.backgroundColor = [UIColor colorWithRed:192/255.0
+									green:206/255.0 blue:221/255.0 alpha:1.0];
+	}
+
 	if (self.mFileBaseName)
 		[self loadLocalHTML:self.mFileBaseName];
 	else
@@ -103,7 +113,7 @@ NSString * const kInfoStyle = @"<style type=\"text/css\">body {font-family: Helv
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)aOrient
 {
-    return YES;
+	return YES;
 }
 
 
@@ -178,7 +188,10 @@ NSString * const kInfoStyle = @"<style type=\"text/css\">body {font-family: Helv
 		aText = @"";
 	NSString *s = [NSString stringWithFormat:@"%@\n%@\n%@",
 				   kInfoMeta, kInfoStyle, aText];
-	[self.mWebView loadHTMLString:s baseURL:nil];
+	NSArray *array = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+														 NSUserDomainMask, YES);
+	NSURL *baseURL = [NSURL fileURLWithPath:[array lastObject]];
+	[self.mWebView loadHTMLString:s baseURL:baseURL];
 }
 
 

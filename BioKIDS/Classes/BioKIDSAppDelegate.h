@@ -2,7 +2,7 @@
   BioKIDSAppDelegate.h
   Created 8/8/11.
 
-  Copyright (c) 2011 The Regents of the University of Michigan
+  Copyright (c) 2011-2013 The Regents of the University of Michigan
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
@@ -26,7 +26,22 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BioKIDSAppDelegate : NSObject <UIApplicationDelegate>
+// Provide an implementation of supportedInterfaceOrientations for all
+// UINavigationController instances (needed in iOS 6 and later).
+@interface UINavigationController(BioKIDSRotation)
+-(NSUInteger)supportedInterfaceOrientations;
+@end
+
+@implementation UINavigationController(BioKIDSRotation)
+-(NSUInteger)supportedInterfaceOrientations
+{
+	return UIInterfaceOrientationMaskAll;
+}
+@end
+
+
+@interface BioKIDSAppDelegate : NSObject <UIApplicationDelegate,
+											UIAlertViewDelegate>
 {
 }
 

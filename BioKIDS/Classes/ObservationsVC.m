@@ -2,7 +2,7 @@
   ObservationsVC.m
   Created 8/10/11.
 
-  Copyright (c) 2011 The Regents of the University of Michigan
+  Copyright (c) 2011-2013 The Regents of the University of Michigan
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
@@ -45,6 +45,9 @@
 
 @synthesize mHasViewAppeared;
 @synthesize mTableView, mMOContext, mFRController, mDateFormatter;
+
+// Constants:
+static const CGFloat kLabelViewTag = 101;
 
 
 -(id)init
@@ -132,13 +135,29 @@
 {
 	[super viewDidLoad];
 
+	BioKIDSUtil *bku = [BioKIDSUtil sharedBioKIDSUtil];
+	self.view.backgroundColor = [bku appBackgroundColor];
+
 	self.navigationItem.title = NSLocalizedString(@"ObservationsTitle", nil);
+	NSString *title = NSLocalizedString(@"BackTitle", nil);
+	self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc]
+				initWithTitle:title style:UIBarButtonItemStylePlain
+					   target:nil action:nil] autorelease];
 
 	UIBarButtonItem *btn = [[UIBarButtonItem alloc]
 							initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
 							target:self action:@selector(onAddPress:)];
 	self.navigationItem.rightBarButtonItem = btn;
 	[btn release];
+
+	// Set text and background color for label at bottom of view.
+	UIView *v = [self.view viewWithTag:kLabelViewTag];
+	if ([v isKindOfClass:[UILabel class]])
+	{
+		UILabel *label = (UILabel *)v;
+		label.textColor = [bku titleTextColor];
+		label.backgroundColor = [bku appBackgroundColor];
+	}
 }
 
 
@@ -156,7 +175,9 @@
 
 	// Ensure that "Delete Observation" UIAlertView is closed if back was
 	// pressed to return from an observation InfoVC view.
-	[[BioKIDSUtil sharedBioKIDSUtil] closePopoversAndAlerts:nil];
+	BioKIDSUtil *bku = [BioKIDSUtil sharedBioKIDSUtil];
+	[bku closePopoversAndAlerts:nil];
+	[bku startFetchingLocation];
 
 	// Remove selection.
 	NSIndexPath *ip = [self.mTableView indexPathForSelectedRow];
@@ -179,7 +200,7 @@
 	if (incompleteObs)
 	{
 		for (Observation *obs in incompleteObs)
-			[self.mMOContext deleteObject:obs];
+			[obs deleteObservation];
 
 		// Do not save Core Data here (it is okay for that to happen later).
 	}
@@ -188,6 +209,12 @@
 		NSLog(@"ObservationVC viewWillAppear: unable to fetch Observation objects (%@)\n",
 			  [error localizedDescription]);
 	}
+}
+
+
+- (void)viewDidAppear:(BOOL)aAnimated
+{
+	[super viewDidAppear:aAnimated];
 
 	// When view appears for the first time, skip to the "Add" screen if no
 	// observations have been recorded yet.
@@ -197,14 +224,8 @@
 		self.mHasViewAppeared = YES;
 		[self onAddPress:nil];
 	}
-}
-
-
-- (void)viewDidAppear:(BOOL)aAnimated
-{
-	[super viewDidAppear:aAnimated];
-
-	[self.mTableView flashScrollIndicators];
+	else
+		[self.mTableView flashScrollIndicators];
 }
 
 
@@ -322,10 +343,14 @@
 // aSender may be nil.
 - (void)onAddPress:(id)aSender
 {
+	BioKIDSUtil *bku = [BioKIDSUtil sharedBioKIDSUtil];
+	[bku startFetchingLocation];
+
 	Observation *obs = [NSEntityDescription
 						insertNewObjectForEntityForName:@"Observation"
 						inManagedObjectContext:self.mMOContext];
 	obs.Timestamp = [NSDate date];
+	[obs updateLocation];
 
 	CFUUIDRef uuidRef = CFUUIDCreate(nil);
 	CFStringRef guid = CFUUIDCreateString(nil, uuidRef);
@@ -337,15 +362,15 @@
 	obs.BioKIDSID = [ud stringForKey:kBioKIDSIDKey];
 	obs.Tracker = [ud stringForKey:kTrackerKey];
 	obs.Zone = [ud stringForKey:kZoneKey];
-
-	if (!obs.Timestamp || !obs.GUID || !obs.BioKIDSID || !obs.Tracker || !obs.Zone)
+	if ((!obs.Timestamp || !obs.GUID) ||
+		(![bku isPersonalUse] && (!obs.BioKIDSID || !obs.Tracker || !obs.Zone)))
 	{
 		NSLog(@"missing fields for new observation\n");
-		[self.mMOContext deleteObject:obs];
+		[obs deleteObservation];
 		return;
 	}
 
-	[[BioKIDSUtil sharedBioKIDSUtil] pushViewControllerForScreen:@"_start"
+	[bku pushViewControllerForScreen:@"_start"
 									navController:self.navigationController
 									observation:obs];
 }
@@ -422,7 +447,7 @@
 	Observation *obs = [self.mFRController objectAtIndexPath:aIndexPath];
 	if (obs)
 	{
-		[self.mMOContext deleteObject:obs];
+		[obs deleteObservation];
 
 		NSError *err = nil;
 		didSucceed = [self.mMOContext save:&err];
