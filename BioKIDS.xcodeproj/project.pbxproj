@@ -10,7 +10,6 @@
 		E208913E1857A246009E03D0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E208913D1857A246009E03D0 /* CoreLocation.framework */; };
 		E20891411857AB30009E03D0 /* BioKIDSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E20891401857AB30009E03D0 /* BioKIDSLocationManager.m */; };
 		E20F088B13F07AAD008BA7B9 /* BioKIDSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E20F088813F07AAD008BA7B9 /* BioKIDSAppDelegate.m */; };
-		E20F088C13F07AAD008BA7B9 /* HomeVC.xib in Sources */ = {isa = PBXBuildFile; fileRef = E20F088A13F07AAD008BA7B9 /* HomeVC.xib */; };
 		E20F08C213F08A76008BA7B9 /* InfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E20F08C113F08A76008BA7B9 /* InfoVC.m */; };
 		E20F08C413F08B11008BA7B9 /* InfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E20F08C313F08B11008BA7B9 /* InfoVC.xib */; };
 		E20F08C613F08E10008BA7B9 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E20F08C513F08E10008BA7B9 /* logo.png */; };
@@ -179,6 +178,7 @@
 		E2B7CB84140584DB0030FE6E /* seq-grass-morethanhalf@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B7CB82140584DA0030FE6E /* seq-grass-morethanhalf@2x.png */; };
 		E2BD1C301832DC6600A6BEC7 /* ClassroomToggleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2BD1C2F1832DC6600A6BEC7 /* ClassroomToggleCell.xib */; };
 		E2BD1C331832FD1100A6BEC7 /* ClassroomToggleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2BD1C321832FD1100A6BEC7 /* ClassroomToggleCell.m */; };
+		E2BFFEC11987D4CB008BC761 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2BFFEC01987D4CB008BC761 /* HomeVC.xib */; };
 		E2C5D1D1185624AB005428BA /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C5D1D0185624AB005428BA /* MessageUI.framework */; };
 		E2C84C2E14028B7B00CBA768 /* ServerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C84C2C14028B7B00CBA768 /* ServerVC.m */; };
 		E2C84C2F14028B7B00CBA768 /* ServerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2C84C2D14028B7B00CBA768 /* ServerVC.xib */; };
@@ -202,7 +202,6 @@
 		E20891401857AB30009E03D0 /* BioKIDSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BioKIDSLocationManager.m; path = Classes/BioKIDSLocationManager.m; sourceTree = "<group>"; };
 		E20F088713F07AAD008BA7B9 /* BioKIDSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BioKIDSAppDelegate.h; path = Classes/BioKIDSAppDelegate.h; sourceTree = "<group>"; };
 		E20F088813F07AAD008BA7B9 /* BioKIDSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BioKIDSAppDelegate.m; path = Classes/BioKIDSAppDelegate.m; sourceTree = "<group>"; };
-		E20F088A13F07AAD008BA7B9 /* HomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeVC.xib; path = BioKIDS/Resources/XIBs/HomeVC.xib; sourceTree = "<group>"; };
 		E20F08C013F08A76008BA7B9 /* InfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoVC.h; path = Classes/InfoVC.h; sourceTree = "<group>"; };
 		E20F08C113F08A76008BA7B9 /* InfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoVC.m; path = Classes/InfoVC.m; sourceTree = "<group>"; };
 		E20F08C313F08B11008BA7B9 /* InfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InfoVC.xib; path = BioKIDS/Resources/XIBs/InfoVC.xib; sourceTree = "<group>"; };
@@ -393,6 +392,7 @@
 		E2BD1C2F1832DC6600A6BEC7 /* ClassroomToggleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ClassroomToggleCell.xib; path = BioKIDS/Resources/XIBs/ClassroomToggleCell.xib; sourceTree = "<group>"; };
 		E2BD1C311832FD1100A6BEC7 /* ClassroomToggleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClassroomToggleCell.h; path = Classes/ClassroomToggleCell.h; sourceTree = "<group>"; };
 		E2BD1C321832FD1100A6BEC7 /* ClassroomToggleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassroomToggleCell.m; path = Classes/ClassroomToggleCell.m; sourceTree = "<group>"; };
+		E2BFFEC01987D4CB008BC761 /* HomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeVC.xib; path = BioKIDS/Resources/XIBs/HomeVC.xib; sourceTree = "<group>"; };
 		E2C5D1D0185624AB005428BA /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E2C84C2B14028B7B00CBA768 /* ServerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerVC.h; path = Classes/ServerVC.h; sourceTree = "<group>"; };
 		E2C84C2C14028B7B00CBA768 /* ServerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerVC.m; path = Classes/ServerVC.m; sourceTree = "<group>"; };
@@ -457,7 +457,7 @@
 				E2F65A91185F60E100F04A1F /* Images.xcassets */,
 				E28EC6EF13F05B59001917B5 /* BioKIDS.xcdatamodeld */,
 				E279CFFD1818AD9800440BDB /* BioKIDS1_2.xcmappingmodel */,
-				E20F088A13F07AAD008BA7B9 /* HomeVC.xib */,
+				E2BFFEC01987D4CB008BC761 /* HomeVC.xib */,
 				E292015913F2DBDD00B18653 /* ObservationsVC.xib */,
 				E26A9BCD13F16DFA0074C87A /* SeqChoose1VC.xib */,
 				E2F7E2B213F0C9C1001C7A6C /* SeqChooseNVC.xib */,
@@ -992,6 +992,7 @@
 				E22FB6AF143384670067B9EE /* Settings.png in Resources */,
 				E22FB6B0143384670067B9EE /* Settings@2x.png in Resources */,
 				E22FB6B31433A3A00067B9EE /* observe-highlight-iphone.png in Resources */,
+				E2BFFEC11987D4CB008BC761 /* HomeVC.xib in Resources */,
 				E2FCC6071433B7A400DBE056 /* observe-highlight-ipad.png in Resources */,
 				E2FCC6111433F5D600DBE056 /* ServerSettingsVC.xib in Resources */,
 			);
@@ -1010,7 +1011,6 @@
 				E28EC6FC13F05B59001917B5 /* BioKIDSAppDelegate_iPad.m in Sources */,
 				E20F088B13F07AAD008BA7B9 /* BioKIDSAppDelegate.m in Sources */,
 				E2297282185B709400327478 /* SeqLocationVC.m in Sources */,
-				E20F088C13F07AAD008BA7B9 /* HomeVC.xib in Sources */,
 				E20F08C213F08A76008BA7B9 /* InfoVC.m in Sources */,
 				E2E047C9183AC10900DF1491 /* HomeView.m in Sources */,
 				E2BD1C331832FD1100A6BEC7 /* ClassroomToggleCell.m in Sources */,
